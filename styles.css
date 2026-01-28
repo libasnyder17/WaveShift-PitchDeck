@@ -2666,8 +2666,38 @@ body {
 
 /* Competitive Section - Constrained Width */
 .competitive-constrained {
-    max-width: 75ch;
+    max-width: 85ch;
     margin: 0 auto;
+}
+
+.competitive-two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.competitive-column p {
+    margin-bottom: 1rem;
+}
+
+.competitive-positioning-callout {
+    background: linear-gradient(135deg, rgba(230, 242, 247, 0.5) 0%, rgba(168, 213, 232, 0.25) 100%);
+    border-left: 3px solid var(--accent-blue);
+    padding: 1.25rem 1.75rem;
+    border-radius: 4px;
+    margin: 2rem 0;
+    max-width: 70ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.competitive-positioning-callout p {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.75;
+    margin: 0;
 }
 
 .competitive-callout-box {
@@ -2676,6 +2706,47 @@ body {
     padding: 1.5rem;
     margin-top: 2rem;
     border-radius: 4px;
+}
+
+.competitive-callout-box h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.competitive-callout-box > p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.competitive-gap-list {
+    margin: 0;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    list-style: disc;
+}
+
+.competitive-gap-list li {
+    margin-bottom: 0.5rem;
+}
+
+.competitive-close {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+    .competitive-two-column {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 /* Market Summary Box */
