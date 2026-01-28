@@ -1561,6 +1561,14 @@ body {
     display: block;
 }
 
+.industry-context-image {
+    background: #ffffff;
+    padding: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .chart-note {
     margin-top: 1.5rem;
     font-size: 0.95rem;
@@ -1573,6 +1581,17 @@ body {
     font-size: 0.9rem;
     color: var(--text-light);
     opacity: 0.8;
+}
+
+.industry-context-clean {
+    margin-top: 2rem;
+}
+
+.industry-context-clean h3 {
+    font-size: 1.15rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
 }
 /* ===========================
    ECONOMICS SECTION
