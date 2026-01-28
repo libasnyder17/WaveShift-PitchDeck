@@ -2552,6 +2552,48 @@ body {
     margin-bottom: 0.6rem;
 }
 
+/* Market Size Section - Redesigned */
+.market-size-section {
+    padding: 2.5rem 0 3.5rem 0;
+}
+
+.market-size-framing {
+    text-align: left;
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin: 0.5rem 0 2rem 0;
+    max-width: 65ch;
+}
+
+.tam-sam-som-container {
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
+    padding: 0 20px;
+}
+
+.market-size-support {
+    background: linear-gradient(135deg, rgba(230, 242, 247, 0.4) 0%, rgba(168, 213, 232, 0.2) 100%);
+    border-left: 3px solid var(--accent-blue);
+    padding: 1.5rem 2rem;
+    border-radius: 4px;
+    max-width: 75ch;
+    margin: 2.5rem auto;
+}
+
+.market-size-support p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.market-size-close {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.05rem;
+    color: var(--primary-dark);
+}
+
 /* SAM Scope Grid */
 .sam-scope-grid {
     display: grid;
