@@ -2490,12 +2490,38 @@ body {
     margin: 0;
 }
 
+/* Images grid for Pain section - 2 columns side by side */
+.pain-images-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2.5rem 0;
+}
+
+.pain-image-item {
+    text-align: center;
+}
+
+.pain-image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.75rem;
+}
+
+.pain-image-item .problem-image-caption {
+    font-size: 0.85rem;
+    margin: 0.75rem 0 0 0;
+}
+
 .waveshift-wedge-callout {
     background: linear-gradient(135deg, rgba(0, 102, 161, 0.08) 0%, rgba(26, 140, 190, 0.05) 100%);
     border-left: 4px solid var(--primary-blue);
     padding: 1.25rem 1.5rem;
     border-radius: 4px;
     margin-top: 2rem;
+    clear: both;
 }
 
 .waveshift-wedge-callout p {
@@ -2508,6 +2534,11 @@ body {
     .pain-grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
+    }
+    
+    .pain-images-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
 
