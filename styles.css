@@ -2334,3 +2334,342 @@ body {
 .development-timeline {
     border-top: 3px solid var(--accent-blue);
 }
+
+/* ===========================
+   MARKET PAGE LAYOUT IMPROVEMENTS
+   =========================== */
+
+/* Hero Section */
+.market-hero {
+    padding: 3rem 0 2rem 0;
+}
+
+.hero-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--primary-blue));
+    margin: 1.5rem auto 0 auto;
+}
+
+/* Market Thesis Callout */
+.market-thesis-callout {
+    background: linear-gradient(135deg, rgba(230, 242, 247, 0.6) 0%, rgba(168, 213, 232, 0.3) 100%);
+    border: 1px solid rgba(26, 140, 190, 0.25);
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 70ch;
+    margin: 0 auto;
+}
+
+.market-thesis-callout p {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* Why Market Real - 2 Column Layout */
+.why-market-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.why-market-left {
+    display: flex;
+    align-items: flex-start;
+}
+
+.why-market-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.why-market-card {
+    background: linear-gradient(135deg, rgba(230, 242, 247, 0.4) 0%, rgba(168, 213, 232, 0.2) 100%);
+    border-left: 4px solid var(--accent-blue);
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
+.why-market-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.why-market-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 968px) {
+    .why-market-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Buyer Grid - 2 Columns */
+.buyer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin: 2rem 0;
+}
+
+.buyer-tile {
+    background: linear-gradient(135deg, rgba(0, 102, 161, 0.08) 0%, rgba(26, 140, 190, 0.05) 100%);
+    border: 1px solid var(--border-light);
+    border-left: 3px solid var(--primary-blue);
+    padding: 1.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.buyer-tile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 161, 0.15);
+    border-left-color: var(--accent-blue);
+}
+
+.buyer-tile h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.buyer-reality-callout {
+    background: linear-gradient(135deg, rgba(26, 140, 190, 0.08) 0%, rgba(0, 102, 161, 0.05) 100%);
+    border-left: 4px solid var(--accent-blue);
+    padding: 1.25rem 1.5rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+}
+
+.buyer-reality-callout p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .buyer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Pain Grid - 3 Columns */
+.pain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.pain-card {
+    background: linear-gradient(135deg, rgba(230, 242, 247, 0.5) 0%, rgba(168, 213, 232, 0.25) 100%);
+    border: 1px solid var(--border-light);
+    border-top: 3px solid var(--accent-blue);
+    padding: 1.75rem;
+    border-radius: 4px;
+}
+
+.pain-card h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pain-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.waveshift-wedge-callout {
+    background: linear-gradient(135deg, rgba(0, 102, 161, 0.08) 0%, rgba(26, 140, 190, 0.05) 100%);
+    border-left: 4px solid var(--primary-blue);
+    padding: 1.25rem 1.5rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+}
+
+.waveshift-wedge-callout p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 968px) {
+    .pain-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+}
+
+/* Mission Section Background Band */
+.mission-section-band {
+    background: linear-gradient(135deg, rgba(230, 242, 247, 0.3) 0%, rgba(168, 213, 232, 0.15) 100%);
+    padding: 3rem 0;
+}
+
+.mission-reason-compact li {
+    margin-bottom: 0.6rem;
+}
+
+/* SAM Scope Grid */
+.sam-scope-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.sam-scope-included {
+    background: #e6f2f7;
+    border: 2px solid #1a8cbe;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.sam-scope-excluded {
+    background: #fff5e6;
+    border: 2px solid #d97706;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.sam-scope-header {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.sam-scope-included .sam-scope-header {
+    color: #003d5c;
+}
+
+.sam-scope-excluded .sam-scope-header {
+    color: #92400e;
+}
+
+.sam-scope-list {
+    margin: 0;
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.sam-scope-included .sam-scope-list {
+    color: #003d5c;
+}
+
+.sam-scope-excluded .sam-scope-list {
+    color: #92400e;
+}
+
+.sam-scope-note {
+    margin-top: 1rem;
+    color: #0066a1;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .sam-scope-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+}
+
+/* Why Now - Constrained Width */
+.why-now-constrained {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Competitive Section - Constrained Width */
+.competitive-constrained {
+    max-width: 75ch;
+    margin: 0 auto;
+}
+
+.competitive-callout-box {
+    background: linear-gradient(135deg, rgba(26, 140, 190, 0.08) 0%, rgba(0, 102, 161, 0.05) 100%);
+    border-left: 5px solid var(--accent-blue);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+/* Market Summary Box */
+.market-summary-box {
+    background: linear-gradient(135deg, rgba(0, 61, 92, 0.08) 0%, rgba(0, 102, 161, 0.05) 100%);
+    border-left: 5px solid var(--primary-dark);
+    border-radius: 4px;
+    padding: 2rem;
+    margin: 2rem 0;
+    max-width: 70ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Spacing improvements */
+.content-section {
+    padding: 3.5rem 0;
+}
+
+.section-content {
+    margin-top: 2rem;
+}
+
+.section-content > p {
+    max-width: 75ch;
+}
+
+/* Figure captions - consistent styling */
+.market-image-caption,
+.problem-image-caption,
+.asv-image-caption,
+.workflow-diagram-caption,
+.market-context-caption {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .market-hero {
+        padding: 2rem 0 1.5rem 0;
+    }
+    
+    .market-thesis-callout {
+        padding: 1.5rem;
+    }
+    
+    .market-thesis-callout p {
+        font-size: 1rem;
+    }
+    
+    .why-market-card,
+    .pain-card {
+        padding: 1.25rem;
+    }
+    
+    .buyer-tile {
+        padding: 1.25rem;
+    }
+    
+    .mission-section-band {
+        padding: 2rem 0;
+    }
+    
+    .content-section {
+        padding: 2.5rem 0;
+    }
+}
