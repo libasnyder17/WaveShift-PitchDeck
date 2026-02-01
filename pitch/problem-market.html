@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem & Market Opportunity - WaveShift Pitch Deck</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .pitch-page {
+            padding: 2rem 2rem 1rem 2rem;
+            max-height: 100vh;
+            overflow: hidden;
+        }
+        .pitch-hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .single-slide-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .headline {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+        .problem-buckets {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .bucket {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .bucket-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+        .bucket ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .bucket li {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+        .bucket li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+        }
+        .visual-section {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .visual-box {
+            flex: 1;
+            text-align: center;
+        }
+        .visual-box img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .visual-caption {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+        .market-reality {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-blue);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .market-reality h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .market-reality ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .market-reality li {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: #6c757d;
+            margin-bottom: 0.4rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+        .market-reality li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+        .pitch-nav-bottom {
+            text-align: center;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+        .pitch-nav-bottom a {
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            background: var(--accent-blue);
+            color: white;
+            transition: background 0.3s;
+            font-size: 0.9rem;
+        }
+        .pitch-nav-bottom a:hover {
+            background: var(--primary-blue);
+        }
+        .pitch-nav-bottom a.secondary {
+            background: #6c757d;
+        }
+        .pitch-nav-bottom a.secondary:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo"><img src="../assets/waveshift-logo.png" alt="WaveShift Logo" style="height: 150px; vertical-align: middle;"></div>
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../underlying-magic-technology.html">Technology</a>
+                <a href="../business-model.html">Economics</a>
+                <a href="../milestones.html">Development</a>
+                <a href="../market.html">Market</a>
+                <a href="../team.html">Team</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="pitch-page">
+            <div class="single-slide-container">
+                <h1 class="pitch-hero-title">Problem & Market Opportunity</h1>
+                
+                <div style="background: #f8f9fa; padding: 1rem; border-radius: 6px; margin: 0 auto 1rem; max-width: 1200px; border-left: 4px solid var(--accent-blue);">
+                    <h3 style="font-size: 0.85rem; color: var(--primary-blue); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Judging Prompts</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 0.8rem; color: #6c757d; line-height: 1.6; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <li style="margin: 0;">• What pain are you solving?</li>
+                        <li style="margin: 0;">• What problem is your company addressing?</li>
+                        <li style="margin: 0;">• What is your market opportunity?</li>
+                        <li style="margin: 0;">• How big is the whole market?</li>
+                    </ul>
+                </div>
+                
+                <p class="headline">Maritime monitoring today: fragmented, expensive, and non-persistent</p>
+                
+                <div class="problem-buckets">
+                    <div class="bucket">
+                        <h3 class="bucket-title">Coverage</h3>
+                        <ul>
+                            <li>Crewed patrols = shift-based, limited hours</li>
+                            <li>Fixed cameras = blind spots, static</li>
+                            <li>No continuous mobile awareness</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bucket">
+                        <h3 class="bucket-title">Economics</h3>
+                        <ul>
+                            <li>Patrol boats costly to operate</li>
+                            <li>Incidents trigger cascading costs</li>
+                            <li>Budget vs. coverage mismatch</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bucket">
+                        <h3 class="bucket-title">Workflow</h3>
+                        <ul>
+                            <li>Reactive, not proactive</li>
+                            <li>Fragmented data streams</li>
+                            <li>No unified operator view</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="visual-section">
+                    <div class="visual-box">
+                        <img src="../assets/map.png" alt="Global maritime shipping lanes">
+                        <p class="visual-caption">80% of global trade moves by sea</p>
+                    </div>
+                    <div class="visual-box">
+                        <img src="../assets/busy-ports.png" alt="Port operations">
+                        <p class="visual-caption">Active port terminal operations</p>
+                    </div>
+                </div>
+                
+                <div class="market-reality">
+                    <h4>Market Reality</h4>
+                    <ul>
+                        <li>Port authorities, terminal operators, maritime security contractors already budget for monitoring</li>
+                        <li>Regulatory compliance (ISPS, MTSA) requires continuous security awareness</li>
+                        <li>WaveShift targets this existing budget with autonomous, cost-effective coverage</li>
+                    </ul>
+                </div>
+
+                <div class="pitch-nav-bottom">
+                    <a href="cover.html" class="secondary">← Back</a>
+                    <a href="solution.html">Next: Solution →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 WaveShift. Autonomous Maritime Systems | Early-Stage Venture</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

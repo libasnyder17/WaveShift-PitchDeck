@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economics - WaveShift</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo"><img src="assets/waveshift-logo.png" alt="WaveShift Logo" style="height: 150px; vertical-align: middle;"></div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="technology.html">Technology</a>
+                <a href="economics.html" class="active">Economics</a>
+                <a href="development.html">Development</a>
+                <a href="market.html">Market</a>
+                <a href="team.html">Team</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- PAGE HEADER -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Economics</h1>
+                <p class="page-subtitle">Unit economics, pricing structure, and repeatable deployment model</p>
+            </div>
+        </section>
+
+        <!-- ECONOMICS SECTION -->
+        <section class="economics-section">
+            <div class="container">
+                <div class="section-content" style="margin-bottom: 4rem;">
+                    <p style="font-size: 1.1rem; color: var(--text-dark); max-width: 900px; margin: 0 auto; line-height: 1.6;">WaveShift is built to win on unit economics and repeatable deployments, not on flashy one-off hardware.</p>
+                </div>
+
+                <!-- ECONOMICS SUBSECTION 1 -->
+                <div class="economics-card">
+                    <div class="economics-card-header">
+                        <h3 class="economics-card-title">Business Model</h3>
+                        <p style="color: #a8d5e8; font-size: 0.95rem; margin: 0.5rem 0 0 0; font-weight: 400;">How WaveShift makes money and expands per customer</p>
+                    </div>
+                    <div class="economics-card-content">
+                        <div class="thesis-box">
+                            <p><strong>Core thesis:</strong> ports don't want to buy a boat — they want persistent coverage with measurable outcomes and predictable cost.</p>
+                        </div>
+                        
+                        <!-- Three Concept Boxes -->
+                        <div class="three-box-grid">
+                            <div class="concept-box">
+                                <div class="concept-box-header">
+                                    <span class="concept-box-icon">🔁</span>
+                                    Revenue Model
+                                </div>
+                                <ul>
+                                    <li>Paid pilots → annual contracts</li>
+                                    <li>Per-site base + per-vessel expansion</li>
+                                    <li>Recurring, contract-driven revenue</li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <div class="concept-box-header">
+                                    <span class="concept-box-icon">🛡️</span>
+                                    What Customers Buy
+                                </div>
+                                <ul>
+                                    <li>Guaranteed coverage hours</li>
+                                    <li>Verification + response workflow</li>
+                                    <li>Reporting & audit trail</li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <div class="concept-box-header">
+                                    <span class="concept-box-icon">📊</span>
+                                    Why This Isn't Hardware Sales
+                                </div>
+                                <ul>
+                                    <li>Value = coverage, not hulls</li>
+                                    <li>Human-in-the-loop workflows</li>
+                                    <li>Reliability & uptime over time</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- From Pilot to ARR Flow Diagram -->
+                        <div style="max-width:900px;margin:2.5rem auto;padding:0 20px;">
+                            <svg viewBox="0 0 900 200" width="100%" height="auto" role="img" aria-label="From Pilot to ARR horizontal flow">
+                                <defs>
+                                    <style>
+                                        .flow-label { font: 700 15px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#003d5c; }
+                                        .flow-sub { font: 500 12px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#0066a1; }
+                                        .flow-box { stroke:#1a8cbe; stroke-width:2; rx:8; }
+                                        .flow-arrow-h { stroke:#1a8cbe; stroke-width:3; fill:none; marker-end:url(#arrow-flow-h); }
+                                    </style>
+                                    <marker id="arrow-flow-h" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                                        <path d="M0,0 L0,6 L9,3 z" fill="#1a8cbe" />
+                                    </marker>
+                                </defs>
+
+                                <!-- Title -->
+                                <text x="450" y="25" text-anchor="middle" style="font: 600 16px system-ui; fill:#003d5c;">From Pilot to Recurring Revenue</text>
+
+                                <!-- Step 1: Paid Pilot -->
+                                <rect x="30" y="60" width="180" height="100" class="flow-box" fill="#e6f2f7"/>
+                                <text x="120" y="100" text-anchor="middle" class="flow-label">Paid Pilot</text>
+                                <text x="120" y="120" text-anchor="middle" class="flow-sub">Initial deployment</text>
+                                <text x="120" y="138" text-anchor="middle" class="flow-sub">+ validation</text>
+
+                                <!-- Arrow 1 -->
+                                <path d="M 215 110 L 245 110" class="flow-arrow-h"/>
+
+                                <!-- Step 2: Annual Site Contract -->
+                                <rect x="250" y="60" width="180" height="100" class="flow-box" fill="#a8d5e8"/>
+                                <text x="340" y="95" text-anchor="middle" class="flow-label">Annual Site</text>
+                                <text x="340" y="113" text-anchor="middle" class="flow-label">Contract</text>
+                                <text x="340" y="138" text-anchor="middle" class="flow-sub">Recurring revenue starts</text>
+
+                                <!-- Arrow 2 -->
+                                <path d="M 435 110 L 465 110" class="flow-arrow-h"/>
+
+                                <!-- Step 3: Add Vessels -->
+                                <rect x="470" y="60" width="180" height="100" class="flow-box" fill="#0066a1"/>
+                                <text x="560" y="105" text-anchor="middle" style="font: 700 15px system-ui; fill:white;">Add Vessels</text>
+                                <text x="560" y="130" text-anchor="middle" style="font: 500 12px system-ui; fill:white;">Expand per site</text>
+
+                                <!-- Arrow 3 -->
+                                <path d="M 655 110 L 685 110" class="flow-arrow-h"/>
+
+                                <!-- Step 4: Expand Coverage -->
+                                <rect x="690" y="60" width="180" height="100" class="flow-box" fill="#003d5c"/>
+                                <text x="780" y="100" text-anchor="middle" style="font: 700 15px system-ui; fill:white;">Expand</text>
+                                <text x="780" y="118" text-anchor="middle" style="font: 700 15px system-ui; fill:white;">Coverage</text>
+                                <text x="780" y="138" text-anchor="middle" style="font: 500 12px system-ui; fill:white;">ARR growth</text>
+                            </svg>
+
+                            <div class="funnel-caption" style="text-align:center;color:#0066a1;font:500 13px system-ui, -apple-system, Segoe UI, Roboto, Arial;margin-top:1rem;">
+                                <strong>Revenue compounds per site — expansion is structural, not aspirational.</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ECONOMICS SUBSECTION 2 -->
+                <div style="margin: 4rem 0;">
+                    <h2 class="section-headline" style="margin-bottom: 1rem;">Initial Product Scope</h2>
+                    <p style="color: #0066a1; font-size: 1rem; margin-bottom: 2.5rem;">What Sentinel-ASV delivers in early deployments</p>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; max-width: 1100px; margin: 0 auto;">
+                        <!-- Left Column: Text, No Box -->
+                        <div style="padding-top: 1rem;">
+                            <p style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.7; margin-bottom: 1.5rem;">A practical first configuration: port monitoring + patrol + verification, designed to plug into existing security operations.</p>
+                            <p style="font-size: 1rem; color: var(--text-dark); line-height: 1.7; font-weight: 500;">WaveShift's early product is intentionally commercial and compliance-friendly: monitor, verify, document, coordinate response.</p>
+                        </div>
+                        
+                        <!-- Right Column: Light Box -->
+                        <div style="background: #f8fbfc; border: 1px solid #c0d9e8; border-radius: 8px; padding: 2rem;">
+                            <div style="margin-bottom: 2rem;">
+                                <h4 style="color: #003d5c; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600;">✔ Included</h4>
+                                <ul style="list-style: none; padding: 0; margin: 0; color: var(--text-dark); line-height: 1.8;">
+                                    <li style="margin-bottom: 0.5rem;">• Uncrewed ASV platform (hull + propulsion)</li>
+                                    <li style="margin-bottom: 0.5rem;">• Comms & remote ops (LTE/5G + sat backup)</li>
+                                    <li style="margin-bottom: 0.5rem;">• Core sensing: radar, EO/IR, AIS</li>
+                                    <li style="margin-bottom: 0.5rem;">• Autonomy & safety (geofencing, collision avoidance)</li>
+                                    <li style="margin-bottom: 0.5rem;">• Operator console + deployment support</li>
+                                </ul>
+                            </div>
+                            <div style="padding-top: 1.5rem; border-top: 1px solid #d5e8f2;">
+                                <h4 style="color: #003d5c; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600;">🚫 Not Included (By Design)</h4>
+                                <ul style="list-style: none; padding: 0; margin: 0; color: var(--text-dark); line-height: 1.8;">
+                                    <li style="margin-bottom: 0.5rem;">• Weapons or armed payloads</li>
+                                    <li style="margin-bottom: 0.5rem;">• High-end military mission sets</li>
+                                    <li style="margin-bottom: 0.5rem;">• National-defense scope claims</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ECONOMICS SUBSECTION 3 -->
+                <div style="margin: 4rem 0;">
+                    <h2 class="section-headline" style="margin-bottom: 1rem;">Unit Economics</h2>
+                    <p style="color: #0066a1; font-size: 1rem; margin-bottom: 2rem;">Per-vessel costs, margins, and operating assumptions</p>
+                    <p style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.7; margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">Strong unit economics are what make this model repeatable at scale.</p>
+                    
+                    <div style="max-width: 1100px; margin: 0 auto;">
+                        <!-- Card 1: Hardware BOM -->
+                        <div style="background: #f8fbfc; border: 1px solid #d5e8f2; border-radius: 6px; padding: 2rem; margin-bottom: 2rem;">
+                            <h4 style="color: #003d5c; font-size: 1.15rem; margin-bottom: 0.5rem; font-weight: 600;">Hardware BOM (Per Vessel)</h4>
+                            <p style="color: #4a6b7d; font-size: 0.95rem; margin-bottom: 1.5rem;">Cost driven by sensors, comms, and redundancy — not bespoke hardware</p>
+                            <ul style="list-style: none; padding: 0; margin: 0; color: var(--text-dark); line-height: 1.8;">
+                                <li style="margin-bottom: 0.6rem;"><strong>Estimated BOM range: ~$75k–$250k+</strong></li>
+                                <li style="margin-bottom: 0.6rem;">• Radar: Commercial marine radar (low-$k to ~$10k+ depending on capability)</li>
+                                <li style="margin-bottom: 0.6rem;">• EO/IR: Entry stabilized EO/IR (~$10k+) to higher-end options</li>
+                                <li style="margin-bottom: 0.6rem;">• Connectivity: Maritime LTE + satellite backup (e.g. Starlink Maritime class)</li>
+                                <li style="margin-bottom: 0.6rem;">• AIS: Class-dependent transponder (~$200–$2k+)</li>
+                            </ul>
+                        </div>
+
+                        <p style="margin: 1.5rem 0 3rem 0; font-size: 1rem; color: var(--text-dark); text-align: center;">WaveShift does not require bleeding-edge sensors on day one — reliable detection and verification at port ranges is sufficient.</p>
+
+                        <!-- Card 2: Annual Ops & Software -->
+                        <div style="background: #f8fbfc; border: 1px solid #d5e8f2; border-radius: 6px; padding: 2rem; margin-bottom: 3rem;">
+                            <h4 style="color: #003d5c; font-size: 1.15rem; margin-bottom: 0.5rem; font-weight: 600;">Annual Operating Run-Rate (Per Vessel)</h4>
+                            <p style="color: #4a6b7d; font-size: 0.95rem; margin-bottom: 1.5rem;">Recurring costs tied to uptime, connectivity, and monitoring</p>
+                            <ul style="list-style: none; padding: 0; margin: 0; color: var(--text-dark); line-height: 1.8;">
+                                <li style="margin-bottom: 0.6rem;"><strong>Estimated annual run-rate: ~$40k–$150k</strong></li>
+                                <li style="margin-bottom: 0.6rem;">• Connectivity: Cellular primary with satellite backup where required</li>
+                                <li style="margin-bottom: 0.6rem;">• Maintenance & spares: Marine environment realities</li>
+                                <li style="margin-bottom: 0.6rem;">• Insurance & compliance: Docking, charging, and coverage</li>
+                                <li style="margin-bottom: 0.6rem;">• Software & monitoring: Ops tooling, updates, training</li>
+                            </ul>
+                        </div>
+
+                        <!-- Unit Economics Waterfall Chart -->
+                        <div style="max-width:900px;margin:3rem auto;padding:0 20px;">
+                            <svg viewBox="0 0 800 480" width="100%" height="auto" role="img" aria-label="Per-vessel unit economics waterfall">
+                                <defs>
+                                    <style>
+                                        .waterfall-title { font: 700 20px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#003d5c; }
+                                        .waterfall-bar-label { font: 600 13px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#003d5c; }
+                                        .waterfall-value { font: 700 15px system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+                                        .waterfall-axis { stroke:#c0d9e8; stroke-width:1; }
+                                        .waterfall-connector { stroke:#a8d5e8; stroke-width:2; stroke-dasharray:4,4; }
+                                    </style>
+                                </defs>
+
+                                <!-- Chart Title -->
+                                <text x="400" y="30" text-anchor="middle" class="waterfall-title">Per-Vessel Unit Economics (Annual)</text>
+
+                                <!-- Y-axis reference line -->
+                                <line x1="50" y1="390" x2="750" y2="390" class="waterfall-axis"/>
+
+                                <!-- Bar 1: Revenue -->
+                                <rect x="70" y="100" width="100" height="290" fill="#0066a1" rx="4"/>
+                                <text x="120" y="75" text-anchor="middle" class="waterfall-bar-label">Service</text>
+                                <text x="120" y="88" text-anchor="middle" class="waterfall-bar-label">Revenue</text>
+                                <text x="120" y="240" text-anchor="middle" class="waterfall-value" fill="white">$350k</text>
+                                
+                                <!-- Connector 1 -->
+                                <line x1="170" y1="100" x2="200" y2="100" class="waterfall-connector"/>
+
+                                <!-- Bar 2: Connectivity (down) -->
+                                <rect x="200" y="100" width="80" height="58" fill="#d94f4f" rx="4"/>
+                                <text x="240" y="85" text-anchor="middle" class="waterfall-bar-label">Connectivity</text>
+                                <text x="240" y="132" text-anchor="middle" class="waterfall-value" fill="white">-$20k</text>
+                                
+                                <!-- Connector 2 -->
+                                <line x1="280" y1="158" x2="310" y2="158" class="waterfall-connector"/>
+
+                                <!-- Bar 3: Maintenance (down) -->
+                                <rect x="310" y="158" width="80" height="72" fill="#d94f4f" rx="4"/>
+                                <text x="350" y="85" text-anchor="middle" class="waterfall-bar-label">Maintenance</text>
+                                <text x="350" y="197" text-anchor="middle" class="waterfall-value" fill="white">-$25k</text>
+                                
+                                <!-- Connector 3 -->
+                                <line x1="390" y1="230" x2="420" y2="230" class="waterfall-connector"/>
+
+                                <!-- Bar 4: Ops + Monitoring (down) -->
+                                <rect x="420" y="230" width="80" height="87" fill="#d94f4f" rx="4"/>
+                                <text x="460" y="75" text-anchor="middle" class="waterfall-bar-label">Ops +</text>
+                                <text x="460" y="88" text-anchor="middle" class="waterfall-bar-label">Monitoring</text>
+                                <text x="460" y="277" text-anchor="middle" class="waterfall-value" fill="white">-$30k</text>
+                                
+                                <!-- Connector 4 -->
+                                <line x1="500" y1="317" x2="530" y2="317" class="waterfall-connector"/>
+
+                                <!-- Bar 5: Insurance & Compliance (down) -->
+                                <rect x="530" y="317" width="80" height="43" fill="#d94f4f" rx="4"/>
+                                <text x="570" y="78" text-anchor="middle" class="waterfall-bar-label">Insurance &</text>
+                                <text x="570" y="91" text-anchor="middle" class="waterfall-bar-label">Compliance</text>
+                                <text x="570" y="342" text-anchor="middle" class="waterfall-value" fill="white">-$15k</text>
+                                
+                                <!-- Connector 5 -->
+                                <line x1="610" y1="360" x2="640" y2="360" class="waterfall-connector"/>
+
+                                <!-- Bar 6: Indicative Gross Margin (final) -->
+                                <rect x="640" y="130" width="100" height="260" fill="#1a8cbe" rx="4"/>
+                                <text x="690" y="68" text-anchor="middle" class="waterfall-bar-label">Indicative</text>
+                                <text x="690" y="81" text-anchor="middle" class="waterfall-bar-label">Gross</text>
+                                <text x="690" y="94" text-anchor="middle" class="waterfall-bar-label">Margin</text>
+                                <text x="690" y="250" text-anchor="middle" class="waterfall-value" fill="white">~$250k–</text>
+                                <text x="690" y="268" text-anchor="middle" class="waterfall-value" fill="white">$300k</text>
+                                <text x="690" y="286" text-anchor="middle" style="font: 600 12px system-ui; fill:white;">(≈70%+)</text>
+
+                                <!-- Y-axis labels -->
+                                <text x="40" y="105" text-anchor="end" style="font: 500 11px system-ui; fill:#4a6b7d;">$400k</text>
+                                <text x="40" y="200" text-anchor="end" style="font: 500 11px system-ui; fill:#4a6b7d;">$250k</text>
+                                <text x="40" y="295" text-anchor="end" style="font: 500 11px system-ui; fill:#4a6b7d;">$100k</text>
+                                <text x="40" y="394" text-anchor="end" style="font: 500 11px system-ui; fill:#4a6b7d;">$0</text>
+
+                                <!-- Footnote -->
+                                <text x="400" y="430" text-anchor="middle" style="font: 500 9px system-ui; fill:#4a6b7d; font-style:italic;">Illustrative per-vessel economics based on early service configuration; ranges vary by coverage hours, sensor suite, and SLA.</text>
+                            </svg>
+
+                            <p style="text-align:center;color:var(--text-dark);font:500 13px system-ui, -apple-system, Segoe UI, Roboto, Arial;margin-top:1rem;">Strong unit economics are driven by recurring contracts and disciplined operations, with hardware amortized over the service lifetime.</p>
+                        </div>
+
+                        <!-- Card 3: Why This Beats Crewed Patrols -->
+                        <div style="background: #f8fbfc; border: 1px solid #d5e8f2; border-radius: 6px; padding: 2rem; margin-top: 3rem;">
+                            <h4 style="color: #003d5c; font-size: 1.15rem; margin-bottom: 0.5rem; font-weight: 600;">Why This Beats Crewed Patrols</h4>
+                            <p style="color: #4a6b7d; font-size: 0.95rem; margin-bottom: 1.5rem;">More coverage, less labor, predictable cost</p>
+                            
+                            <p style="margin: 0 0 1rem 0; color: var(--text-dark);"><strong>Crewing stacks labor, fuel, scheduling, and utilization inefficiency.</strong></p>
+                            
+                            <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0; color: var(--text-dark); line-height: 1.8;">
+                                <li style="margin-bottom: 0.6rem;">• Conservative benchmark: U.S. Coast Guard reimbursable rate of ~$3.7k–$4.8k per hour for a port security boat</li>
+                                <li style="margin-bottom: 0.6rem;">• Labor dominates cost: Crewed patrols incur fixed staffing regardless of utilization</li>
+                                <li style="margin-bottom: 0.6rem;">• Utilization loss: Gaps in coverage driven by shifts, downtime, and scheduling</li>
+                            </ul>
+
+                            <p style="margin: 1.5rem 0 1rem 0; padding-top: 1rem; border-top: 1px solid #d5e8f2; color: var(--text-dark); line-height: 1.6;">WaveShift does not need to beat this hourly rate on day one.<br>It wins by delivering more coverage hours with fewer human minutes<br>under a predictable annual contract.</p>
+
+                            <!-- Cost Stack Comparison Bar Chart (inside Card 3) -->
+                        <div style="max-width:900px;margin:3rem auto;padding:0 20px;">
+                            <svg viewBox="0 0 800 520" width="100%" height="auto" role="img" aria-label="Cost stack comparison: Crewed Patrol vs Sentinel-ASV">
+                                <defs>
+                                    <style>
+                                        .chart-title { font: 700 20px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#003d5c; }
+                                        .bar-label { font: 600 15px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#003d5c; }
+                                        .segment-label { font: 500 13px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:white; }
+                                        .legend-text { font: 500 13px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#003d5c; }
+                                        .caption-text { font: 500 14px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#0066a1; }
+                                    </style>
+                                </defs>
+
+                                <!-- Chart Title -->
+                                <text x="400" y="30" text-anchor="middle" class="chart-title">Annual Cost Stack Comparison</text>
+
+                                <!-- Left Bar: Crewed Patrol -->
+                                <text x="200" y="470" text-anchor="middle" class="bar-label">Crewed Patrol</text>
+                                <text x="200" y="488" text-anchor="middle" class="legend-text">(labor-heavy model)</text>
+                                
+                                <!-- Labor (largest - 55%) -->
+                                <rect x="100" y="80" width="200" height="165" fill="#003d5c" rx="4"/>
+                                <text x="200" y="160" text-anchor="middle" class="segment-label">Labor</text>
+                                <text x="200" y="178" text-anchor="middle" class="segment-label">(55%)</text>
+
+                                <!-- Fuel (25%) -->
+                                <rect x="100" y="250" width="200" height="75" fill="#0066a1" rx="4"/>
+                                <text x="200" y="290" text-anchor="middle" class="segment-label">Fuel (25%)</text>
+
+                                <!-- Maintenance (15%) -->
+                                <rect x="100" y="330" width="200" height="45" fill="#1a8cbe" rx="4"/>
+                                <text x="200" y="356" text-anchor="middle" class="segment-label">Maint. (15%)</text>
+
+                                <!-- Limited Coverage / Downtime (5%) -->
+                                <rect x="100" y="380" width="200" height="15" fill="#a8d5e8" rx="4"/>
+                                
+                                <text x="200" y="415" text-anchor="middle" style="font: 500 12px system-ui; fill:#0066a1;">+ Limited Coverage</text>
+                                <text x="200" y="430" text-anchor="middle" style="font: 500 12px system-ui; fill:#0066a1;">+ Scheduling Inefficiency</text>
+
+
+                                <!-- Right Bar: Sentinel-ASV Service -->
+                                <text x="600" y="470" text-anchor="middle" class="bar-label">Sentinel-ASV Service</text>
+                                <text x="600" y="488" text-anchor="middle" class="legend-text">(capex amortized + ops)</text>
+
+                                <!-- Hardware Amortized (35%) -->
+                                <rect x="500" y="80" width="200" height="105" fill="#0066a1" rx="4"/>
+                                <text x="600" y="128" text-anchor="middle" class="segment-label">Hardware</text>
+                                <text x="600" y="146" text-anchor="middle" class="segment-label">Amortized (35%)</text>
+
+                                <!-- Software + Ops (30%) -->
+                                <rect x="500" y="190" width="200" height="90" fill="#1a8cbe" rx="4"/>
+                                <text x="600" y="232" text-anchor="middle" class="segment-label">Software + Ops</text>
+                                <text x="600" y="250" text-anchor="middle" class="segment-label">(30%)</text>
+
+                                <!-- Connectivity (20%) -->
+                                <rect x="500" y="285" width="200" height="60" fill="#a8d5e8" rx="4"/>
+                                <text x="600" y="320" text-anchor="middle" style="font: 500 13px system-ui; fill:#003d5c;">Connectivity (20%)</text>
+
+                                <!-- Maintenance (15%) -->
+                                <rect x="500" y="350" width="200" height="45" fill="#c0d9e8" rx="4"/>
+                                <text x="600" y="376" text-anchor="middle" style="font: 500 13px system-ui; fill:#003d5c;">Maint. (15%)</text>
+                                
+                                <text x="600" y="415" text-anchor="middle" style="font: 500 12px system-ui; fill:#0066a1; font-weight:700;">+ Persistent Coverage</text>
+                                <text x="600" y="430" text-anchor="middle" style="font: 500 12px system-ui; fill:#0066a1; font-weight:700;">+ Minimal Downtime</text>
+
+                                <!-- Legend -->
+                                <text x="50" y="65" class="legend-text">High Cost →</text>
+                                <text x="750" y="65" text-anchor="end" class="legend-text">← Optimized</text>
+                            </svg>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ECONOMICS SUBSECTION 4 -->
+                <div style="margin: 4rem 0; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <h2 class="section-headline" style="margin-bottom: 1rem;">Pricing Structure</h2>
+                    <p style="color: #0066a1; font-size: 1rem; margin-bottom: 2.5rem;">How contracts are structured and justified</p>
+                    
+                    <p style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.7; margin-bottom: 2rem;">What the port buys: guaranteed coverage capacity + reporting + integration into their workflow.</p>
+                    
+                    <div style="background: #f8fbfc; border: 1px solid #c0d9e8; border-radius: 6px; padding: 1.8rem; margin: 2rem 0;">
+                        <h4 style="color: #003d5c; font-size: 1.05rem; margin-bottom: 1rem; font-weight: 600;">Contract Structure</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; color: var(--text-dark); line-height: 1.8;">
+                            <li style="margin-bottom: 0.5rem;"><strong>Base site contract:</strong> Foundation subscription per location</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Per-vessel add-ons:</strong> Expand coverage within the same site</li>
+                        </ul>
+                    </div>
+                    
+                    <p style="font-size: 1rem; color: var(--text-dark); line-height: 1.7; margin: 2rem 0;"><strong>Typical service pricing target:</strong> $250k – $600k per vessel-year (service contract)<br><span style="font-size: 0.95rem; color: #4a6b7d;">(Varies by coverage hours, sensor suite, response workflow, and SLA.)</span></p>
+                    
+                    <p style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.7; margin: 2rem 0;">Customers aren't comparing to "buying a boat." They're comparing to staffing crews (overtime, turnover, compliance), fuel + maintenance + downtime, limited coverage hours, and lack of auditability.</p>
+                    
+                    <p style="font-size: 1rem; color: var(--text-dark); line-height: 1.7;">If a small crewed security boat can effectively cost thousands per hour on a fully-loaded basis in official reimbursable tables, ports can justify a contract that delivers persistent coverage with fewer human hours.</p>
+                </div>
+
+                <!-- ECONOMICS SUBSECTION 5 -->
+                <div style="margin: 4rem 0;">
+                    <h2 class="section-headline" style="margin-bottom: 1rem;">Initial Market Footprint (SOM)</h2>
+                    <p style="color: #0066a1; font-size: 1rem; margin-bottom: 2.5rem;">A focused path to $10–15M ARR</p>
+                    
+                    <p style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.7; margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">WaveShift's early SOM is intentionally tight and operationally realistic:</p>
+                        
+                        <!-- SOM Math Tiles -->
+                        <div style="max-width:900px;margin:2.5rem auto 3rem auto;padding:0 20px;">
+                            <svg viewBox="0 0 880 300" width="100%" height="auto" role="img" aria-label="SOM math breakdown">
+                                <defs>
+                                    <style>
+                                        .tile-box { fill:#e6f2f7; stroke:#1a8cbe; stroke-width:2; rx:8; }
+                                        .tile-number { font: 700 38px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#003d5c; }
+                                        .tile-label { font: 600 14px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#0066a1; }
+                                        .tile-sublabel { font: 500 11px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#4a6b7d; }
+                                        .multiply-symbol { font: 700 32px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#1a8cbe; }
+                                        .equals-symbol { font: 700 36px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#003d5c; }
+                                        .result-box { fill:#0066a1; stroke:#003d5c; stroke-width:2; rx:8; }
+                                        .result-number { font: 700 38px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:white; }
+                                        .result-label { font: 600 14px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:white; }
+                                    </style>
+                                </defs>
+
+                                <!-- Top label -->
+                                <text x="440" y="30" text-anchor="middle" style="font: 600 16px system-ui; fill:#003d5c;">SOM Math Breakdown (3–5 Year Horizon)</text>
+
+                                <!-- Tile 1: Ports -->
+                                <rect x="40" y="70" width="150" height="170" class="tile-box"/>
+                                <text x="115" y="145" text-anchor="middle" class="tile-number">20–50</text>
+                                <text x="115" y="175" text-anchor="middle" class="tile-label">Ports</text>
+                                <text x="115" y="195" text-anchor="middle" class="tile-sublabel">Initial</text>
+                                <text x="115" y="210" text-anchor="middle" class="tile-sublabel">Target Sites</text>
+
+                                <!-- Multiply symbol -->
+                                <text x="215" y="160" text-anchor="middle" class="multiply-symbol">×</text>
+
+                                <!-- Tile 2: Vessels per port -->
+                                <rect x="240" y="70" width="150" height="170" class="tile-box"/>
+                                <text x="315" y="145" text-anchor="middle" class="tile-number">1–5</text>
+                                <text x="315" y="175" text-anchor="middle" class="tile-label">Vessels</text>
+                                <text x="315" y="195" text-anchor="middle" class="tile-sublabel">Per Port</text>
+                                <text x="315" y="210" text-anchor="middle" class="tile-sublabel">(avg ~2)</text>
+
+                                <!-- Multiply symbol -->
+                                <text x="415" y="160" text-anchor="middle" class="multiply-symbol">×</text>
+
+                                <!-- Tile 3: Price per vessel -->
+                                <rect x="440" y="70" width="170" height="170" class="tile-box"/>
+                                <text x="525" y="135" text-anchor="middle" class="tile-number">$250k–</text>
+                                <text x="525" y="165" text-anchor="middle" class="tile-number">$400k</text>
+                                <text x="525" y="195" text-anchor="middle" class="tile-label">Per Vessel</text>
+                                <text x="525" y="215" text-anchor="middle" class="tile-sublabel">Annual Contract</text>
+
+                                <!-- Equals symbol -->
+                                <text x="640" y="160" text-anchor="middle" class="equals-symbol">=</text>
+
+                                <!-- Tile 4: Resulting ARR -->
+                                <rect x="670" y="70" width="170" height="170" class="result-box"/>
+                                <text x="755" y="135" text-anchor="middle" class="result-number">$10–</text>
+                                <text x="755" y="165" text-anchor="middle" class="result-number">$15M</text>
+                                <text x="755" y="195" text-anchor="middle" class="result-label">ARR</text>
+                                <text x="755" y="215" text-anchor="middle" style="font: 500 11px system-ui; fill:white;">Target Range</text>
+                            </svg>
+
+                            <div class="funnel-caption" style="text-align:center;color:#0066a1;font:500 13px system-ui, -apple-system, Segoe UI, Roboto, Arial;margin-top:1rem;">
+                                <strong>A disciplined, pilot-led approach to a repeatable deployment pattern.</strong>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: 1rem; color: var(--text-dark); line-height: 1.7; margin: 3rem auto 0 auto; max-width: 900px; text-align: center;">This is why WaveShift starts with monitoring/patrol: it's a repeatable deployment pattern across many ports.</p>
+                </div>
+
+                <!-- ECONOMICS SUBSECTION 6 -->
+                <div style="margin: 4rem 0;">
+                    <h2 class="section-headline" style="margin-bottom: 1rem;">Customer Success Metrics</h2>
+                    <p style="color: #0066a1; font-size: 1rem; margin-bottom: 2.5rem;">What customers track — and renew on</p>
+                    
+                    <p style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.7; margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; text-align: center;">WaveShift should sell with a dashboard that ties directly to outcomes: coverage delivered, operator efficiency, verified incidents, and audit-ready reporting.</p>
+
+                        <!-- Buyer Success Dashboard Mockup -->
+                        <div style="max-width:900px;margin:3rem auto;padding:0 20px;">
+                            <svg viewBox="0 0 900 560" width="100%" height="auto" role="img" aria-label="Buyer success metrics dashboard">
+                                <defs>
+                                    <style>
+                                        .dashboard-bg { fill:#f8fbfc; stroke:#c0d9e8; stroke-width:2; rx:8; }
+                                        .dashboard-header { fill:#003d5c; rx:8 8 0 0; }
+                                        .dashboard-title { font: 700 18px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:white; }
+                                        .metric-card { fill:white; stroke:#c0d9e8; stroke-width:1.5; rx:6; }
+                                        .cost-metric-card { fill:#e6f2f7; stroke:#0066a1; stroke-width:2; rx:6; }
+                                        .metric-value { font: 700 32px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#003d5c; }
+                                        .metric-label { font: 600 13px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#0066a1; }
+                                        .metric-sublabel { font: 500 11px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#4a6b7d; }
+                                        .trend-positive { font: 600 12px system-ui; fill:#2d8659; }
+                                        .chart-bar { fill:#1a8cbe; rx:2; }
+                                        .chart-axis { stroke:#c0d9e8; stroke-width:1; }
+                                        .incident-icon { fill:#0066a1; }
+                                    </style>
+                                </defs>
+
+                                <!-- Dashboard Container -->
+                                <rect x="20" y="20" width="860" height="520" class="dashboard-bg"/>
+                                
+                                <!-- Dashboard Header -->
+                                <rect x="20" y="20" width="860" height="50" class="dashboard-header"/>
+                                <text x="40" y="50" class="dashboard-title">Sentinel Operations Dashboard — Customer View (Port Authority)</text>
+                                <text x="840" y="50" text-anchor="end" style="font: 500 12px system-ui; fill:#a8d5e8;">Last 30 Days</text>
+
+                                <!-- Cost Efficiency Metric (Featured) -->
+                                <rect x="40" y="85" width="820" height="65" class="cost-metric-card"/>
+                                <text x="450" y="110" text-anchor="middle" class="metric-label">COST EFFICIENCY</text>
+                                <text x="280" y="135" text-anchor="middle" style="font: 700 24px system-ui; fill:#003d5c;">$87 / Coverage Hour</text>
+                                <text x="620" y="135" text-anchor="middle" style="font: 700 24px system-ui; fill:#003d5c;">1,581 Coverage Hours / Operator Hour</text>
+
+                                <!-- Row 1: Key Metrics -->
+                                
+                                <!-- Coverage Hours -->
+                                <rect x="40" y="165" width="190" height="110" class="metric-card"/>
+                                <text x="135" y="210" text-anchor="middle" class="metric-value">2,847</text>
+                                <text x="135" y="235" text-anchor="middle" class="metric-label">Coverage Hours</text>
+                                <text x="135" y="252" text-anchor="middle" class="metric-sublabel">Verified Patrol Time</text>
+                                <text x="135" y="267" text-anchor="middle" class="trend-positive">↑ 11% vs. prior month</text>
+
+                                <!-- Alerts Verified -->
+                                <rect x="250" y="165" width="190" height="110" class="metric-card"/>
+                                <text x="345" y="210" text-anchor="middle" class="metric-value">847</text>
+                                <text x="345" y="235" text-anchor="middle" class="metric-label">Alerts Verified</text>
+                                <text x="345" y="252" text-anchor="middle" class="metric-sublabel">Visual Confirmation</text>
+                                <text x="345" y="267" text-anchor="middle" class="trend-positive">False Positive: 3.4%</text>
+
+                                <!-- Time-to-Verify -->
+                                <rect x="460" y="165" width="190" height="110" class="metric-card"/>
+                                <text x="555" y="210" text-anchor="middle" class="metric-value">52 sec</text>
+                                <text x="555" y="235" text-anchor="middle" class="metric-label">Avg Time-to-Verify</text>
+                                <text x="555" y="252" text-anchor="middle" class="metric-sublabel">Alert → EO/IR Confirm</text>
+                                <text x="555" y="267" text-anchor="middle" class="trend-positive">↓ 6 sec improvement</text>
+
+                                <!-- Operator Minutes -->
+                                <rect x="670" y="165" width="190" height="110" class="metric-card"/>
+                                <text x="765" y="210" text-anchor="middle" class="metric-value">1.8</text>
+                                <text x="765" y="235" text-anchor="middle" class="metric-label">Operator Min/Hour</text>
+                                <text x="765" y="252" text-anchor="middle" class="metric-sublabel">Human Attention Req'd</text>
+                                <text x="765" y="267" text-anchor="middle" class="trend-positive">Target: &lt;2.0 min/hr</text>
+
+                                <!-- Row 2: Charts and Incident Log -->
+                                
+                                <!-- Coverage by Zone (Mini Bar Chart) -->
+                                <rect x="40" y="295" width="400" height="225" class="metric-card"/>
+                                <text x="240" y="320" text-anchor="middle" style="font: 600 14px system-ui; fill:#003d5c;">Coverage by Zone (Weekly Hours)</text>
+                                
+                                <!-- Simple bar chart -->
+                                <line x1="70" y1="490" x2="410" y2="490" class="chart-axis"/>
+                                <rect x="80" y="390" width="50" height="100" class="chart-bar"/>
+                                <text x="105" y="510" text-anchor="middle" style="font: 500 10px system-ui; fill:#4a6b7d;">Terminal A</text>
+                                
+                                <rect x="150" y="350" width="50" height="140" class="chart-bar"/>
+                                <text x="175" y="510" text-anchor="middle" style="font: 500 10px system-ui; fill:#4a6b7d;">Terminal B</text>
+                                
+                                <rect x="220" y="410" width="50" height="80" class="chart-bar"/>
+                                <text x="245" y="510" text-anchor="middle" style="font: 500 10px system-ui; fill:#4a6b7d;">North Basin</text>
+                                
+                                <rect x="290" y="370" width="50" height="120" class="chart-bar"/>
+                                <text x="315" y="510" text-anchor="middle" style="font: 500 10px system-ui; fill:#4a6b7d;">South Basin</text>
+                                
+                                <rect x="360" y="420" width="50" height="70" class="chart-bar"/>
+                                <text x="385" y="510" text-anchor="middle" style="font: 500 10px system-ui; fill:#4a6b7d;">Anchorage</text>
+
+                                <!-- Incident Clips Logged -->
+                                <rect x="460" y="295" width="400" height="225" class="metric-card"/>
+                                <text x="660" y="320" text-anchor="middle" style="font: 600 14px system-ui; fill:#003d5c;">Incident Clips Logged</text>
+                                
+                                <!-- Incident count with icon -->
+                                <circle cx="660" cy="375" r="45" fill="#e6f2f7" stroke="#1a8cbe" stroke-width="2"/>
+                                <text x="660" y="388" text-anchor="middle" style="font: 700 32px system-ui; fill:#003d5c;">114</text>
+                                
+                                <text x="660" y="440" text-anchor="middle" style="font: 600 13px system-ui; fill:#0066a1;">Total Incidents Documented</text>
+                                <text x="660" y="460" text-anchor="middle" style="font: 500 11px system-ui; fill:#4a6b7d;">Video + Track + Metadata</text>
+                                <text x="660" y="480" text-anchor="middle" style="font: 500 11px system-ui; fill:#4a6b7d;">• 78 Vessel Intrusions</text>
+                                <text x="660" y="495" text-anchor="middle" style="font: 500 11px system-ui; fill:#4a6b7d;">• 22 Security Alerts</text>
+                                <text x="660" y="510" text-anchor="middle" style="font: 500 11px system-ui; fill:#4a6b7d;">• 14 Safety Events</text>
+                            </svg>
+
+                            <div class="funnel-caption" style="text-align:center;color:#0066a1;font:500 13px system-ui, -apple-system, Segoe UI, Roboto, Arial;margin-top:1rem;">
+                                <strong>Customers renew based on measurable outcomes — not robot demos.</strong>
+                            </div>
+                        </div>
+                </div>
+
+                <!-- ECONOMICS SUBSECTION 7 -->
+                <div class="economics-card">
+                    <div class="economics-card-header">
+                        <h3 class="economics-card-title">Capital Plan</h3>
+                        <p style="color: #a8d5e8; font-size: 0.95rem; margin: 0.5rem 0 0 0; font-weight: 400;">What this round unlocks economically</p>
+                    </div>
+                    <div class="economics-card-content">
+                        <div class="funding-box">
+                            <p><strong>WaveShift is seeking a $500,000 pre-seed round</strong> to execute Phase I, focused on demonstrating a modular, open-architecture Sentinel-ASV platform with minimal autonomy and remote-operations stack over a 15-month timeline.</p>
+                            <p>This capital takes WaveShift from concept risk to paid-pilot readiness.</p>
+                            <p><em>This funding is intentionally scoped to reach a pilot-ready prototype, not full commercialization.</em></p>
+                        </div>
+
+                        <h4 class="subsection-subheading">Use of Funds (Phase I)</h4>
+                        <div class="allocation-container">
+                            <div class="allocation-grid">
+                                <div class="allocation-item">
+                                    <div class="allocation-percentage">40%</div>
+                                    <h5 class="allocation-title">Prototype Build & Materials</h5>
+                                    <p>Hull fabrication, propulsion, power systems, mechanical integration, and sensor mounting for the first Sentinel-ASV prototype.</p>
+                                </div>
+
+                                <div class="allocation-item">
+                                    <div class="allocation-percentage">30%</div>
+                                    <h5 class="allocation-title">Design, Testing & IP</h5>
+                                    <p>Finalizing platform architecture, autonomy integration, control systems, simulation, bench testing, and protection of core intellectual property.</p>
+                                </div>
+
+                                <div class="allocation-item">
+                                    <div class="allocation-percentage">25%</div>
+                                    <h5 class="allocation-title">Salaries & Stipends</h5>
+                                    <p>Engineering labor, integration support, and stipends for focused development and testing periods.</p>
+                                </div>
+
+                                <div class="allocation-item">
+                                    <div class="allocation-percentage">5%</div>
+                                    <h5 class="allocation-title">Operations & Contingency</h5>
+                                    <p>Insurance, logistics, test site access, and contingency buffer for hardware iteration.</p>
+                                </div>
+                            </div>
+                            <div class="allocation-chart">
+                                <img src="assets/pie-chart.png" alt="Budget Allocation Pie Chart">
+                            </div>
+                        </div>
+
+                        <div class="framing-box">
+                            <p style="margin:0;font-weight:600;color:var(--primary-dark);">This capital converts technical risk into commercial pilot readiness.</p>
+                        </div>
+
+                        <h4 class="subsection-subheading">What This Capital Unlocks (Economically)</h4>
+                        <div class="unlocks-box">
+                            <ul class="economics-list">
+                                <li>Build and test a first Sentinel-ASV prototype</li>
+                                <li>Validate hardware cost assumptions used in unit economics</li>
+                                <li>Prepare for paid pilot discussions with ports and maritime operators</li>
+                                <li>De-risk the transition from prototype to annual service contracts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REFERENCES & COST BENCHMARKS SECTION -->
+        <section class="references-section">
+            <div class="container">
+                <h2 class="section-headline">References & Cost Benchmarks</h2>
+                <p class="section-subtitle">Key sources informing WaveShift's unit economics and market positioning</p>
+                
+                <div class="references-grid">
+                    <!-- REFERENCE 1 -->
+                    <a href="https://www.uscg.mil/" target="_blank" class="reference-card">
+                        <div class="reference-card-header">
+                            <h3 class="reference-card-title">U.S. Coast Guard — Standard Reimbursable Rates for Maritime Security Assets</h3>
+                        </div>
+                        <div class="reference-card-body">
+                            <p>Official reimbursable rate tables including hourly rates for port security operations and maritime patrol vessels.</p>
+                            <span class="reference-link">Visit Source →</span>
+                        </div>
+                    </a>
+
+                    <!-- REFERENCE 2 -->
+                    <a href="https://www.starlink.com/maritime" target="_blank" class="reference-card">
+                        <div class="reference-card-header">
+                            <h3 class="reference-card-title">Starlink — Maritime Connectivity: Hardware and Service Pricing</h3>
+                        </div>
+                        <div class="reference-card-body">
+                            <p>Satellite connectivity solutions for uncrewed maritime systems, including hardware costs and service plans for remote operations.</p>
+                            <span class="reference-link">Visit Source →</span>
+                        </div>
+                    </a>
+
+                    <!-- REFERENCE 3 -->
+                    <a href="https://www.garmin.com/" target="_blank" class="reference-card">
+                        <div class="reference-card-header">
+                            <h3 class="reference-card-title">Commercial Marine Radar Systems — Representative Open-Array Radar Pricing</h3>
+                        </div>
+                        <div class="reference-card-body">
+                            <p>Commercial marine radar systems pricing data, including Garmin open-array radar systems and similar surface detection sensors.</p>
+                            <span class="reference-link">Visit Source →</span>
+                        </div>
+                    </a>
+
+                    <!-- REFERENCE 4 -->
+                    <a href="https://www.fortunebusinessinsights.com/electro-optical-infrared-eo-ir-systems-market-102742" target="_blank" class="reference-card">
+                        <div class="reference-card-header">
+                            <h3 class="reference-card-title">Commercial EO/IR Payloads — Maritime & Uncrewed Systems Market Overview</h3>
+                        </div>
+                        <div class="reference-card-body">
+                            <p>Electro-optical and infrared payload options for maritime surveillance, ranging from entry-level stabilized systems to advanced sensors.</p>
+                            <span class="reference-link">Visit Source →</span>
+                        </div>
+                    </a>
+
+                    <!-- REFERENCE 5 -->
+                    <a href="https://www.nmea.org/" target="_blank" class="reference-card">
+                        <div class="reference-card-header">
+                            <h3 class="reference-card-title">AIS Transponders — Commercial Availability and Pricing</h3>
+                        </div>
+                        <div class="reference-card-body">
+                            <p>Automatic Identification System (AIS) transponder specifications, commercial availability, and pricing across different vessel classes.</p>
+                            <span class="reference-link">Visit Source →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 WaveShift. Autonomous Maritime Systems | Early-Stage Venture</p>
+            <!-- <a href="pitch/cover.html" style="margin-left: 1rem; color: #a8d5e8;">Pitch Deck</a> -->
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

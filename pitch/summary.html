@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary - WaveShift Pitch Deck</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .pitch-page {
+            min-height: 80vh;
+            padding: 4rem 2rem;
+        }
+        .pitch-hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .pitch-bullets {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .pitch-bullets ul {
+            list-style: none;
+            padding: 0;
+        }
+        .pitch-bullets li {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .pitch-bullets li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+        .pitch-figure {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #003d5c 0%, #0066a1 100%);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+        .pitch-figure h3 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        .pitch-figure p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #a8d5e8;
+            margin-bottom: 0;
+        }
+        .pitch-figure a {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary-blue);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .pitch-figure a:hover {
+            transform: translateY(-2px);
+        }
+        .pitch-nav-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .pitch-nav-bottom a {
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            background: var(--accent-blue);
+            color: white;
+            transition: background 0.3s;
+        }
+        .pitch-nav-bottom a:hover {
+            background: var(--primary-blue);
+        }
+        .pitch-nav-bottom a.secondary {
+            background: #6c757d;
+        }
+        .pitch-nav-bottom a.secondary:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo"><img src="../assets/waveshift-logo.png" alt="WaveShift Logo" style="height: 150px; vertical-align: middle;"></div>
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../underlying-magic-technology.html">Technology</a>
+                <a href="../business-model.html">Economics</a>
+                <a href="../milestones.html">Development</a>
+                <a href="../market.html">Market</a>
+                <a href="../team.html">Team</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="pitch-page">
+            <div class="container">
+                <h1 class="pitch-hero-title">Summary</h1>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 2rem auto 3rem; max-width: 900px; border-left: 4px solid var(--accent-blue);">
+                    <h3 style="font-size: 0.95rem; color: var(--primary-blue); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Judging Prompts</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 0.9rem; color: #6c757d; line-height: 1.8;">
+                        <li style="margin-bottom: 0.5rem;">• Restate the opportunity</li>
+                        <li style="margin-bottom: 0.5rem;">• Restate the pain</li>
+                        <li style="margin-bottom: 0.5rem;">• Restate why your solution is unique</li>
+                        <li style="margin-bottom: 0.5rem;">• Why should you advance to the next round?</li>
+                    </ul>
+                </div>
+                
+                <div class="pitch-bullets">
+                    <ul>
+                        <li><strong>Problem:</strong> Maritime security is expensive, intermittent, and doesn't scale</li>
+                        <li><strong>Solution:</strong> Autonomous surface vessels for continuous, affordable monitoring</li>
+                        <li><strong>Market:</strong> Port authorities, terminal operators, maritime security contractors</li>
+                        <li><strong>Business model:</strong> Pilots → annual contracts → fleet expansion (recurring revenue)</li>
+                        <li><strong>Timeline:</strong> 12 months to working prototype and pilot demonstrations</li>
+                        <li><strong>Ask:</strong> Seeking pilot partners, advisors, and early-stage funding to support development</li>
+                    </ul>
+                </div>
+
+                <div class="pitch-figure">
+                    <h3>WaveShift: Autonomous Maritime Monitoring</h3>
+                    <p>Delivering persistent coverage at a fraction of traditional patrol costs</p>
+                    <a href="../contact.html">Get in Touch</a>
+                </div>
+
+                <div class="pitch-nav-bottom">
+                    <a href="financials.html" class="secondary">← Back</a>
+                    <a href="cover.html">Back to Cover</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 WaveShift. Autonomous Maritime Systems | Early-Stage Venture</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
