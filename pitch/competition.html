@@ -7,85 +7,230 @@
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles.css">
     <style>
+        body {
+            overflow: hidden;
+        }
         .pitch-page {
-            min-height: 80vh;
-            padding: 4rem 2rem;
+            height: 100vh;
+            padding: 1.5rem 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            background: #f8f9fa;
         }
         .pitch-hero-title {
-            font-size: 3rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
             text-align: center;
         }
-        .pitch-bullets {
-            max-width: 900px;
-            margin: 0 auto 3rem;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        .framing-statement {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 1rem;
+            font-style: italic;
         }
-        .pitch-bullets ul {
+        .slide-content {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            grid-template-rows: 1fr auto;
+            gap: 1rem;
+            max-height: calc(100vh - 140px);
+        }
+        .section-competitors {
+            background: white;
+            padding: 1.25rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            overflow-y: auto;
+        }
+        .section-competitors h3 {
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 0.25rem;
+        }
+        .competitor-category {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .competitor-category:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .category-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+        .category-examples {
+            font-size: 0.7rem;
+            color: #6c757d;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+        .competitor-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+        }
+        .strengths-list, .limitations-list {
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+        .strengths-list {
+            background: #e8f8e8;
+            border-left: 3px solid #28a745;
+        }
+        .limitations-list {
+            background: #fff3cd;
+            border-left: 3px solid #ffc107;
+        }
+        .strengths-list h4, .limitations-list h4 {
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .strengths-list h4 {
+            color: #28a745;
+        }
+        .limitations-list h4 {
+            color: #856404;
+        }
+        .strengths-list ul, .limitations-list ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
-        .pitch-bullets li {
-            font-size: 1.25rem;
-            line-height: 1.8;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            padding-left: 2rem;
+        .strengths-list li, .limitations-list li {
+            padding-left: 0.75rem;
             position: relative;
+            line-height: 1.4;
+            margin-bottom: 0.25rem;
         }
-        .pitch-bullets li:before {
-            content: "→";
+        .strengths-list li:before {
+            content: "✓";
             position: absolute;
             left: 0;
-            color: var(--accent-blue);
-            font-weight: bold;
+            color: #28a745;
         }
-        .pitch-figure {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 2rem;
+        .limitations-list li:before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+            font-size: 0.65rem;
+        }
+        .section-matrix {
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 1.25rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            overflow-y: auto;
         }
-        .pitch-figure h3 {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        .pitch-figure p {
+        .section-matrix h3 {
             font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 0.25rem;
         }
-        .pitch-figure-caption {
-            margin-top: 1.5rem;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-style: italic;
+        .matrix-table {
+            width: 100%;
+            font-size: 0.7rem;
+            border-collapse: collapse;
+        }
+        .matrix-table th {
+            background: #e8f4f8;
+            padding: 0.5rem 0.25rem;
             text-align: center;
+            font-weight: 700;
+            color: var(--primary-blue);
+            border: 1px solid #b3dce8;
+            font-size: 0.65rem;
+            line-height: 1.2;
+        }
+        .matrix-table td {
+            padding: 0.5rem 0.25rem;
+            text-align: center;
+            border: 1px solid #dee2e6;
+            vertical-align: middle;
+        }
+        .matrix-table tr:first-child td {
+            font-weight: 600;
+            background: #f8f9fa;
+            text-align: left;
+            padding-left: 0.5rem;
+            font-size: 0.7rem;
+        }
+        .matrix-table .checkmark {
+            color: #28a745;
+            font-weight: 900;
+            font-size: 1rem;
+        }
+        .matrix-table .partial {
+            color: #ffc107;
+            font-weight: 900;
+            font-size: 1rem;
+        }
+        .matrix-table .no {
+            color: #dc3545;
+            font-weight: 900;
+            font-size: 1rem;
+        }
+        .section-why-waveshift {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #0066cc 0%, #004c99 100%);
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        .section-why-waveshift h3 {
+            font-size: 1rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.75rem;
+        }
+        .why-item {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem;
+            border-radius: 4px;
+            text-align: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            line-height: 1.3;
         }
         .pitch-nav-bottom {
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 0.75rem;
             display: flex;
             justify-content: center;
             gap: 1rem;
         }
         .pitch-nav-bottom a {
-            padding: 0.75rem 1.5rem;
+            padding: 0.5rem 1rem;
             text-decoration: none;
             border-radius: 4px;
             background: var(--accent-blue);
             color: white;
             transition: background 0.3s;
+            font-size: 0.85rem;
         }
         .pitch-nav-bottom a:hover {
             background: var(--primary-blue);
@@ -116,41 +261,156 @@
 
     <main>
         <section class="pitch-page">
-            <div class="container">
-                <h1 class="pitch-hero-title">Competition</h1>
-                
-                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 2rem auto 3rem; max-width: 900px; border-left: 4px solid var(--accent-blue);">
-                    <h3 style="font-size: 0.95rem; color: var(--primary-blue); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Judging Prompts</h3>
-                    <ul style="list-style: none; padding: 0; font-size: 0.9rem; color: #6c757d; line-height: 1.8;">
-                        <li style="margin-bottom: 0.5rem;">• Who is your existing competition?</li>
-                        <li style="margin-bottom: 0.5rem;">• What are their strengths and weaknesses versus your solution?</li>
-                        <li style="margin-bottom: 0.5rem;">• Why are you different?</li>
-                    </ul>
-                </div>
-                
-                <div class="pitch-bullets">
-                    <ul>
-                        <li><strong>Crewed patrol boats:</strong> Expensive, shift-based, limited coverage hours</li>
-                        <li><strong>Fixed cameras/sensors:</strong> Static coverage, blind spots, no mobile response</li>
-                        <li><strong>Large defense contractors:</strong> Focused on military/naval applications, not commercial ports</li>
-                        <li><strong>Other ASV startups:</strong> Often targeting open-ocean or research missions</li>
-                        <li><strong>WaveShift differentiation:</strong> Purpose-built for port monitoring, human-in-loop, pilot-ready</li>
-                        <li>Market is fragmented—no dominant autonomous solution for commercial maritime security</li>
-                    </ul>
+            <h1 class="pitch-hero-title">Competition</h1>
+            <p class="framing-statement">
+                Autonomy platforms exist, but WaveShift is purpose-built for port monitoring.
+            </p>
+
+            <div class="slide-content">
+                <!-- Left: Existing Competition -->
+                <div class="section-competitors">
+                    <h3>Existing Competition</h3>
+
+                    <div class="competitor-category">
+                        <div class="category-title">Autonomous Surface Vessel (ASV) Platform Builders</div>
+                        <div class="category-examples">e.g., Saronic, Saildrone, OceanAlpha</div>
+                        <div class="competitor-points">
+                            <div class="strengths-list">
+                                <h4>Strengths</h4>
+                                <ul>
+                                    <li>Proven autonomy stack</li>
+                                    <li>Hardware platforms in production</li>
+                                </ul>
+                            </div>
+                            <div class="limitations-list">
+                                <h4>Limitations vs WaveShift</h4>
+                                <ul>
+                                    <li>Generalist platforms, not port-specific</li>
+                                    <li>Focus on vessel sales, not monitoring services</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="competitor-category">
+                        <div class="category-title">Maritime Autonomy & Defense Integrators</div>
+                        <div class="category-examples">e.g., Sea Machines Robotics, L3Harris, HavocAI</div>
+                        <div class="competitor-points">
+                            <div class="strengths-list">
+                                <h4>Strengths</h4>
+                                <ul>
+                                    <li>High-performance autonomy</li>
+                                    <li>Strong defense relationships</li>
+                                </ul>
+                            </div>
+                            <div class="limitations-list">
+                                <h4>Limitations vs WaveShift</h4>
+                                <ul>
+                                    <li>Defense-first, long procurement cycles</li>
+                                    <li>Over-specified for commercial ports</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="competitor-category">
+                        <div class="category-title">Traditional Port Monitoring Systems</div>
+                        <div class="category-examples">Fixed cameras, AIS tracking, crewed patrols</div>
+                        <div class="competitor-points">
+                            <div class="strengths-list">
+                                <h4>Strengths</h4>
+                                <ul>
+                                    <li>Proven, well-understood</li>
+                                    <li>Low upfront complexity</li>
+                                </ul>
+                            </div>
+                            <div class="limitations-list">
+                                <h4>Limitations vs WaveShift</h4>
+                                <ul>
+                                    <li>Static/shift-based coverage</li>
+                                    <li>High labor costs, blind spots</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="pitch-figure">
-                    <h3>Competitive Positioning</h3>
-                    <p><strong>Traditional methods:</strong> High cost, limited coverage, intermittent</p>
-                    <p><strong>Defense contractors:</strong> Over-engineered, long sales cycles, military-first</p>
-                    <p><strong>WaveShift:</strong> Commercial-focused, affordable, pilot-ready, recurring revenue</p>
-                    <p class="pitch-figure-caption">Positioned between legacy methods and over-specified defense solutions</p>
+                <!-- Right: Comparison Matrix -->
+                <div class="section-matrix">
+                    <h3>Comparison Matrix</h3>
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>ASV<br>Builders</th>
+                                <th>Defense<br>Integrators</th>
+                                <th>Traditional<br>Methods</th>
+                                <th>WaveShift</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Persistent Coverage</td>
+                                <td><span class="partial">◐</span></td>
+                                <td><span class="partial">◐</span></td>
+                                <td><span class="no">✗</span></td>
+                                <td><span class="checkmark">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Port-Specific Monitoring</td>
+                                <td><span class="no">✗</span></td>
+                                <td><span class="no">✗</span></td>
+                                <td><span class="checkmark">✓</span></td>
+                                <td><span class="checkmark">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Human-in-the-Loop Operations</td>
+                                <td><span class="partial">◐</span></td>
+                                <td><span class="no">✗</span></td>
+                                <td><span class="checkmark">✓</span></td>
+                                <td><span class="checkmark">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Turnkey Service Model</td>
+                                <td><span class="no">✗</span></td>
+                                <td><span class="no">✗</span></td>
+                                <td><span class="checkmark">✓</span></td>
+                                <td><span class="checkmark">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Pilot-to-Contract Sales</td>
+                                <td><span class="no">✗</span></td>
+                                <td><span class="no">✗</span></td>
+                                <td><span class="no">✗</span></td>
+                                <td><span class="checkmark">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Outcome Metrics & Reporting</td>
+                                <td><span class="no">✗</span></td>
+                                <td><span class="partial">◐</span></td>
+                                <td><span class="partial">◐</span></td>
+                                <td><span class="checkmark">✓</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                <div class="pitch-nav-bottom">
-                    <a href="marketing-sales.html" class="secondary">← Back</a>
-                    <a href="team.html">Next: Team →</a>
+                <!-- Bottom: Why WaveShift -->
+                <div class="section-why-waveshift">
+                    <h3>Why WaveShift</h3>
+                    <div class="why-grid">
+                        <div class="why-item">Monitoring-first autonomy stack</div>
+                        <div class="why-item">Built specifically for port environments</div>
+                        <div class="why-item">Human-in-the-loop by design</div>
+                        <div class="why-item">Sold as a service with pilots</div>
+                        <div class="why-item">Outcome-driven value proposition</div>
+                    </div>
                 </div>
+            </div>
+
+            <div class="pitch-nav-bottom">
+                <a href="marketing-sales.html" class="secondary">← Back</a>
+                <a href="team.html">Next: Team →</a>
             </div>
         </section>
     </main>
