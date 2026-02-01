@@ -7,94 +7,230 @@
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .pitch-page {
-            min-height: 80vh;
-            padding: 4rem 2rem;
-        }
-        .pitch-hero-title {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        .pitch-bullets {
-            max-width: 900px;
-            margin: 0 auto 3rem;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .pitch-bullets ul {
-            list-style: none;
+        body {
+            margin: 0;
             padding: 0;
+            overflow: hidden;
         }
-        .pitch-bullets li {
-            font-size: 1.25rem;
-            line-height: 1.8;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            padding-left: 2rem;
-            position: relative;
+        header, footer {
+            display: none;
         }
-        .pitch-bullets li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent-blue);
-            font-weight: bold;
+        .pitch-page {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 3rem;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
         }
-        .pitch-figure {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 2rem;
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 0 0 1.5rem 0;
+            text-align: center;
+        }
+        .slide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            gap: 1.25rem;
+            flex: 1;
+            overflow: hidden;
+        }
+        .card {
             background: white;
             border-radius: 8px;
+            padding: 1.25rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .pitch-figure h3 {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        .pitch-figure p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-        .pitch-figure-caption {
-            margin-top: 1.5rem;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-style: italic;
-            text-align: center;
-        }
-        .pitch-nav-bottom {
-            text-align: center;
-            margin-top: 3rem;
             display: flex;
-            justify-content: center;
-            gap: 1rem;
+            flex-direction: column;
         }
-        .pitch-nav-bottom a {
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 4px;
+        .card h3 {
+            font-size: 1.15rem;
+            color: var(--primary-blue);
+            margin: 0 0 1rem 0;
+            font-weight: 600;
+        }
+        .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .revenue-progression {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        .revenue-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+        .revenue-step-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
             background: var(--accent-blue);
             color: white;
-            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
         }
-        .pitch-nav-bottom a:hover {
-            background: var(--primary-blue);
+        .revenue-caption {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            color: #6c757d;
+            font-style: italic;
         }
-        .pitch-nav-bottom a.secondary {
-            background: #6c757d;
+        .unit-economics {
+            grid-column: 2;
+            grid-row: 1;
         }
-        .pitch-nav-bottom a.secondary:hover {
-            background: #5a6268;
+        .economics-table {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .economics-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .economics-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-top: 0.5rem;
+            padding-top: 0.75rem;
+            border-top: 2px solid var(--primary-blue);
+        }
+        .economics-label {
+            color: var(--text-dark);
+        }
+        .economics-value {
+            font-weight: 600;
+        }
+        .economics-value.positive {
+            color: #28a745;
+        }
+        .economics-value.negative {
+            color: #dc3545;
+        }
+        .cost-comparison {
+            grid-column: 1 / 3;
+            grid-row: 2;
+        }
+        .comparison-visual {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 100%;
+            padding: 1rem 2rem;
+        }
+        .cost-bar {
+            flex: 1;
+            max-width: 280px;
+            text-align: center;
+        }
+        .cost-bar-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        .cost-bar-visual {
+            background: linear-gradient(180deg, #dc3545 0%, #c82333 100%);
+            border-radius: 8px 8px 0 0;
+            color: white;
+            padding: 1.5rem 0.75rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            position: relative;
+        }
+        .cost-bar-visual.low {
+            background: linear-gradient(180deg, #28a745 0%, #218838 100%);
+            height: 50%;
+        }
+        .cost-bar-visual.high {
+            height: 100%;
+        }
+        .cost-breakdown {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            color: #6c757d;
+            line-height: 1.6;
+        }
+        .cost-advantage {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        .som-breakdown {
+            grid-column: 1;
+            grid-row: 3;
+        }
+        .som-math {
+            font-size: 0.95rem;
+            line-height: 2;
+        }
+        .som-math-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .som-math-label {
+            color: var(--text-dark);
+            flex: 1;
+        }
+        .som-math-value {
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-left: 1rem;
+        }
+        .som-operator {
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin: 0.25rem 0;
+        }
+        .customer-metrics {
+            grid-column: 2;
+            grid-row: 3;
+        }
+        .metrics-dashboard {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 1rem;
+            border: 2px solid var(--accent-blue);
+        }
+        .dashboard-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+        .metric-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+        .metric-icon {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            margin-right: 0.75rem;
+        }
+        .metric-label {
+            color: var(--text-dark);
         }
     </style>
 </head>
@@ -116,51 +252,145 @@
 
     <main>
         <section class="pitch-page">
-            <div class="container">
-                <h1 class="pitch-hero-title">Business Model</h1>
-                
-                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 2rem auto 3rem; max-width: 900px; border-left: 4px solid var(--accent-blue);">
-                    <h3 style="font-size: 0.95rem; color: var(--primary-blue); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Judging Prompts</h3>
-                    <ul style="list-style: none; padding: 0; font-size: 0.9rem; color: #6c757d; line-height: 1.8;">
-                        <li style="margin-bottom: 0.5rem;">• How will your product be sold?</li>
-                        <li style="margin-bottom: 0.5rem;">• Subscription, fee, or one-time sale?</li>
-                        <li style="margin-bottom: 0.5rem;">• Is revenue recurring?</li>
-                        <li style="margin-bottom: 0.5rem;">• What is required to become profitable?</li>
-                    </ul>
-                </div>
-                
-                <div class="pitch-bullets">
-                    <ul>
-                        <li>Paid pilots → annual contracts (recurring revenue model)</li>
-                        <li>Per-site base fee + per-vessel expansion pricing</li>
-                        <li>Customers buy guaranteed coverage hours, not hardware</li>
-                        <li>Value proposition: continuous coverage at fraction of crewed patrol costs</li>
-                        <li>Built for unit economics: low COGS, high gross margin potential</li>
-                        <li>Expansion within customer: add vessels as coverage needs grow</li>
-                    </ul>
-                </div>
-
-                <div class="pitch-figure">
-                    <h3>Revenue Path</h3>
-                    <p><strong>Pilot (3-6 months)</strong> → Validate technical performance & business value</p>
-                    <p><strong>Annual Contract</strong> → Site coverage with guaranteed uptime SLA</p>
-                    <p><strong>Expand</strong> → Add vessels, extend coverage area, additional sites</p>
-                    <p class="pitch-figure-caption">From pilot validation to recurring annual revenue and multi-vessel expansion</p>
+            <h1 class="slide-title">Business Model</h1>
+            
+            <div class="slide-grid">
+                <!-- Revenue Progression (top-left) -->
+                <div class="card revenue-progression">
+                    <h3>From Pilot to Recurring Revenue</h3>
+                    <div class="card-content">
+                        <div class="revenue-step">
+                            <div class="revenue-step-icon">1</div>
+                            <div><strong>Paid Pilot</strong> — Validate technical & business value</div>
+                        </div>
+                        <div class="revenue-step">
+                            <div class="revenue-step-icon">2</div>
+                            <div><strong>Annual Site Contract</strong> — Recurring revenue with SLA</div>
+                        </div>
+                        <div class="revenue-step">
+                            <div class="revenue-step-icon">3</div>
+                            <div><strong>Add Vessels</strong> — Expand coverage within customer</div>
+                        </div>
+                        <div class="revenue-caption">Pilot-led expansion: demonstrate ROI, then scale per-vessel pricing</div>
+                    </div>
                 </div>
 
-                <div class="pitch-nav-bottom">
-                    <a href="solution.html" class="secondary">← Back</a>
-                    <a href="technology.html">Next: Technology →</a>
+                <!-- Per-Vessel Unit Economics (top-right) -->
+                <div class="card unit-economics">
+                    <h3>Per-Vessel Unit Economics (Annual)</h3>
+                    <div class="card-content">
+                        <div class="economics-table">
+                            <div class="economics-row">
+                                <span class="economics-label">Service Revenue</span>
+                                <span class="economics-value positive">$350k</span>
+                            </div>
+                            <div class="economics-row">
+                                <span class="economics-label">Connectivity</span>
+                                <span class="economics-value negative">-$20k</span>
+                            </div>
+                            <div class="economics-row">
+                                <span class="economics-label">Maintenance</span>
+                                <span class="economics-value negative">-$25k</span>
+                            </div>
+                            <div class="economics-row">
+                                <span class="economics-label">Ops + Monitoring</span>
+                                <span class="economics-value negative">-$30k</span>
+                            </div>
+                            <div class="economics-row">
+                                <span class="economics-label">Insurance & Compliance</span>
+                                <span class="economics-value negative">-$15k</span>
+                            </div>
+                            <div class="economics-row">
+                                <span class="economics-label">Indicative Gross Margin</span>
+                                <span class="economics-value positive">~$250k–$300k (~70%+)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Annual Cost Stack Comparison (center) -->
+                <div class="card cost-comparison">
+                    <h3>Annual Cost Stack: Persistent Coverage</h3>
+                    <div class="comparison-visual">
+                        <div class="cost-bar">
+                            <div class="cost-bar-title">Crewed Patrol</div>
+                            <div class="cost-bar-visual high">
+                                $800k+
+                            </div>
+                            <div class="cost-breakdown">
+                                Labor-intensive:<br>
+                                Salaries, benefits, training, vessels, fuel
+                            </div>
+                        </div>
+                        <div class="cost-bar">
+                            <div class="cost-bar-title">Sentinel-ASV Service</div>
+                            <div class="cost-bar-visual low">
+                                ~$350k
+                            </div>
+                            <div class="cost-breakdown">
+                                Amortized hardware + ops:<br>
+                                Connectivity, maintenance, monitoring
+                            </div>
+                            <div class="cost-advantage">✓ Persistent coverage advantage</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOM Math Breakdown (bottom-left) -->
+                <div class="card som-breakdown">
+                    <h3>SOM Math</h3>
+                    <div class="card-content">
+                        <div class="som-math">
+                            <div class="som-math-row">
+                                <span class="som-math-label">Addressable Ports</span>
+                                <span class="som-math-value">20–50</span>
+                            </div>
+                            <div class="som-operator">×</div>
+                            <div class="som-math-row">
+                                <span class="som-math-label">Vessels per Port (avg)</span>
+                                <span class="som-math-value">~2 (1–5 range)</span>
+                            </div>
+                            <div class="som-operator">×</div>
+                            <div class="som-math-row">
+                                <span class="som-math-label">Revenue per Vessel/Year</span>
+                                <span class="som-math-value">$250k–$400k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Success Metrics (bottom-right) -->
+                <div class="card customer-metrics">
+                    <h3>Customer Success Metrics</h3>
+                    <div class="card-content">
+                        <div class="metrics-dashboard">
+                            <div class="dashboard-title">Sentinel Operations Dashboard</div>
+                            <div class="metric-item">
+                                <div class="metric-icon"></div>
+                                <div class="metric-label">Cost per coverage hour</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon"></div>
+                                <div class="metric-label">Coverage hours delivered</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon"></div>
+                                <div class="metric-label">Operator efficiency gains</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon"></div>
+                                <div class="metric-label">Verified incidents logged</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon"></div>
+                                <div class="metric-label">Audit-ready reporting</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 WaveShift. Autonomous Maritime Systems | Early-Stage Venture</p>
-        </div>
-    </footer>
 
     <script src="../script.js"></script>
 </body>
