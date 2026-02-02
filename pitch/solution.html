@@ -7,141 +7,120 @@
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .headline {
+        /* Headline - centered at top */
+        .solution-headline {
             text-align: center;
-            font-size: clamp(0.8rem, 1.5vw, 1rem);
-            font-weight: 600;
+            font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+            font-weight: 700;
             color: var(--primary-blue);
-            margin-bottom: clamp(0.4rem, 1vh, 0.65rem);
+            margin-bottom: clamp(0.8rem, 1.8vh, 1.2rem);
+            line-height: 1.3;
         }
-        .content-layout {
+
+        /* Two-column grid: left text (~40%), right visuals (~60%) */
+        .solution-layout {
             display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: clamp(0.75rem, 1.5vw, 1.25rem);
+            grid-template-columns: 1fr 1.3fr;
+            gap: clamp(1rem, 2vw, 1.5rem);
             flex: 1;
             min-height: 0;
+            overflow: hidden;
         }
-        .text-column {
+
+        /* Left column - text cards */
+        .solution-text-column {
             display: flex;
             flex-direction: column;
-            gap: clamp(0.6rem, 1.2vw, 0.9rem);
+            gap: clamp(0.8rem, 1.5vw, 1rem);
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-right: 0.25rem;
         }
-        .product-box {
+
+        /* Clean card styling */
+        .solution-card {
             background: white;
-            padding: clamp(0.6rem, 1.2vw, 0.9rem);
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            padding: clamp(0.75rem, 1.3vw, 1rem);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            flex-shrink: 0;
         }
-        .product-box h3 {
-            font-size: clamp(0.85rem, 1.5vw, 1rem);
-            font-weight: 700;
-            color: var(--accent-blue);
-            margin-bottom: clamp(0.3rem, 0.8vh, 0.5rem);
-        }
-        .product-box ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .product-box li {
-            font-size: clamp(0.65rem, 1.2vw, 0.8rem);
-            line-height: 1.4;
-            color: var(--text-dark);
-            margin-bottom: clamp(0.2rem, 0.5vh, 0.3rem);
-            padding-left: 0.9rem;
-            position: relative;
-        }
-        .product-box li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-blue);
-        }
-        .capabilities-box {
-            background: #f8f9fa;
-            padding: clamp(0.6rem, 1.2vw, 0.9rem);
-            border-radius: 6px;
-            border-left: 4px solid var(--accent-blue);
-        }
-        .capabilities-box h4 {
-            font-size: clamp(0.7rem, 1.3vw, 0.85rem);
+
+        .solution-card h3 {
+            font-size: clamp(0.9rem, 1.6vw, 1.1rem);
             font-weight: 700;
             color: var(--primary-blue);
-            margin-bottom: clamp(0.3rem, 0.8vh, 0.5rem);
+            margin: 0 0 clamp(0.4rem, 0.8vh, 0.6rem) 0;
+            line-height: 1.2;
         }
-        .capabilities-box ul {
+
+        .solution-card .solution-subtitle {
+            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin: 0 0 clamp(0.3rem, 0.6vh, 0.5rem) 0;
+            line-height: 1.3;
+        }
+
+        .solution-card ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        .capabilities-box li {
-            font-size: clamp(0.6rem, 1.1vw, 0.75rem);
-            line-height: 1.3;
+
+        .solution-card li {
+            font-size: clamp(0.65rem, 1.1vw, 0.8rem);
+            line-height: 1.5;
             color: var(--text-dark);
-            margin-bottom: clamp(0.2rem, 0.5vh, 0.3rem);
-            padding-left: 0.9rem;
+            margin-bottom: clamp(0.2rem, 0.5vh, 0.35rem);
+            padding-left: 1rem;
             position: relative;
         }
-        .capabilities-box li:before {
-            content: "→";
+
+        .solution-card li:before {
+            content: "•";
             position: absolute;
-            left: 0;
+            left: 0.2rem;
             color: var(--accent-blue);
             font-weight: bold;
         }
-        .visual-column {
+
+        /* Right column - images stacked */
+        .solution-visual-column {
             display: flex;
             flex-direction: column;
-            gap: clamp(0.5rem, 1vw, 0.75rem);
+            gap: clamp(0.8rem, 1.5vw, 1.2rem);
             min-height: 0;
         }
-        .product-figure {
+
+        .solution-image-block {
             flex: 1;
             display: flex;
             flex-direction: column;
             min-height: 0;
+            background: white;
+            padding: clamp(0.5rem, 1vw, 0.75rem);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
-        .product-figure img {
+
+        .solution-image-block img {
+            flex: 1;
             width: 100%;
             height: 100%;
             object-fit: contain;
-            border-radius: 6px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 4px;
         }
-        .figure-caption {
-            font-size: clamp(0.55rem, 1vw, 0.68rem);
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-            font-style: italic;
+
+        .solution-image-caption {
+            font-size: clamp(0.6rem, 0.95vw, 0.75rem);
+            color: #666;
+            margin-top: clamp(0.3rem, 0.6vh, 0.5rem);
+            font-weight: 500;
+            line-height: 1.3;
             flex-shrink: 0;
-        }
-        .judging-prompts {
-            background: #f8f9fa;
-            padding: clamp(0.4rem, 1vw, 0.6rem) clamp(0.6rem, 1.5vw, 1rem);
-            border-radius: 6px;
-            margin: 0 auto clamp(0.4rem, 1vh, 0.6rem);
-            max-width: 1200px;
-            border-left: 4px solid var(--accent-blue);
-        }
-        .judging-prompts h3 {
-            font-size: clamp(0.65rem, 1.1vw, 0.75rem);
-            color: var(--primary-blue);
-            margin-bottom: clamp(0.25rem, 0.6vh, 0.4rem);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .judging-prompts ul {
-            list-style: none;
-            padding: 0;
-            font-size: clamp(0.6rem, 1vw, 0.7rem);
-            color: #6c757d;
-            line-height: 1.4;
-            display: flex;
-            gap: clamp(0.5rem, 1.5vw, 1rem);
-            flex-wrap: wrap;
-        }
-        .judging-prompts li {
-            margin: 0;
         }
     </style>
 </head>
@@ -162,61 +141,68 @@
     </header>
 
     <div class="pitch-slide">
-        <div class="pitch-slide-content" style="background: #f8f9fa; display: flex; flex-direction: column;">
-            <h1 class="pitch-hero-title" style="text-align: center; font-size: clamp(1.4rem, 2.8vw, 1.8rem); margin-bottom: clamp(0.3rem, 0.8vh, 0.5rem);">Solution / Product</h1>
+        <div class="pitch-slide-content" style="background: white; display: flex; flex-direction: column;">
             
-            <div class="judging-prompts">
-                <h3>Judging Prompts</h3>
-                <ul>
-                    <li>• What is your solution to the problem?</li>
-                    <li>• What is your product or service?</li>
-                    <li>• How is your solution unique compared to existing solutions?</li>
-                </ul>
-            </div>
+            <!-- Headline centered at top -->
+            <h1 class="solution-headline">Persistent autonomous maritime monitoring — with human-in-the-loop control</h1>
+            
+            <!-- Two-column layout: text on left, visuals on right -->
+            <div class="solution-layout">
                 
-                <p class="headline">Persistent autonomous monitoring with human-in-the-loop control</p>
-                
-                <div class="content-layout">
-                    <div class="text-column">
-                        <div class="product-box">
-                            <h3>Sentinel-ASV</h3>
-                            <ul>
-                                <li>Autonomous surface vessel for maritime monitoring</li>
-                                <li>Operates continuously—no crew required</li>
-                                <li>Real-time data to remote operator for oversight</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capabilities-box">
-                            <h4>Core Capabilities</h4>
-                            <ul>
-                                <li>Visual + thermal sensors for 24/7 monitoring</li>
-                                <li>Autonomous waypoint navigation</li>
-                                <li>Live sensor streaming to operator</li>
-                                <li>Human-in-the-loop oversight & intervention</li>
-                                <li>Monitoring-focused (not interdiction)</li>
-                            </ul>
-                        </div>
+                <!-- Left column: three cards answering judging prompts -->
+                <div class="solution-text-column">
+                    
+                    <!-- Card 1: Product (Answers "What is your product or service?") -->
+                    <div class="solution-card">
+                        <h3>Sentinel-ASV</h3>
+                        <p class="solution-subtitle">Autonomous surface vessel built for continuous maritime monitoring</p>
+                        <ul>
+                            <li>Operates continuously without onboard crew</li>
+                            <li>Real-time visual + thermal data to a remote operator</li>
+                            <li>Monitoring-focused (not interdiction)</li>
+                        </ul>
                     </div>
                     
-                    <div class="visual-column">
-                        <div class="product-figure">
-                            <img src="../assets/photo.png" alt="Sentinel-ASV vessel">
-                            <p class="figure-caption">Sentinel-ASV: Autonomous surface vessel for persistent monitoring</p>
-                        </div>
-                        <div class="product-figure">
-                            <img src="../assets/photodetails.png" alt="Sentinel-ASV system details">
-                            <p class="figure-caption">System components: sensors, propulsion, onboard computing</p>
-                        </div>
+                    <!-- Card 2: Core Capabilities (Answers "What is your solution to the problem?") -->
+                    <div class="solution-card">
+                        <h3>Core Capabilities</h3>
+                        <ul>
+                            <li>24/7 sensing: visual + thermal, day/night operations</li>
+                            <li>Autonomous navigation: waypoint-based patrols in defined areas</li>
+                            <li>Live data streaming: continuous feed to shore-based operators</li>
+                            <li>Human-in-the-loop: operator oversight, alerts, intervention</li>
+                            <li>Monitoring-first architecture: persistent awareness without crew risk</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Card 3: Differentiation (Answers "How is your solution unique?") -->
+                    <div class="solution-card">
+                        <h3>Why This Is Different</h3>
+                        <ul>
+                            <li>Replaces costly crewed patrol coverage with autonomous persistence</li>
+                            <li>Extends beyond fixed cameras limited to line-of-sight</li>
+                            <li>Delivers continuous presence without shift limits or fatigue</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <!-- Right column: stacked images with captions -->
+                <div class="solution-visual-column">
+                    <div class="solution-image-block">
+                        <img src="../assets/photo.png" alt="Sentinel-ASV vessel">
+                        <p class="solution-image-caption">Sentinel-ASV concept render</p>
+                    </div>
+                    <div class="solution-image-block">
+                        <img src="../assets/photodetails.png" alt="Sentinel-ASV system details">
+                        <p class="solution-image-caption">System architecture: sensors, propulsion, onboard computing, communications</p>
                     </div>
                 </div>
-
-                <div class="pitch-nav-bottom" style="justify-content: center; margin-top: clamp(0.4rem, 1vh, 0.7rem);">
-                    <a href="problem-market.html" class="secondary" style="background: #6c757d; color: white; text-decoration: none; border-radius: 4px; transition: background 0.3s;">← Back</a>
-                    <a href="business-model.html" style="background: var(--accent-blue); color: white; text-decoration: none; border-radius: 4px; transition: background 0.3s;">Next: Business Model →</a>
-                </div>
+                
             </div>
+            
         </div>
+    </div>
 
     <script src="../script.js"></script>
 </body>
