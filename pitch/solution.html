@@ -7,121 +7,156 @@
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        /* Headline - centered at top */
-        .solution-headline {
-            text-align: center;
-            font-size: clamp(1.1rem, 2vw, 1.5rem);
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: clamp(0.6rem, 1.2vh, 0.9rem);
-            line-height: 1.3;
-            letter-spacing: -0.3px;
+        /* Match cover.html background */
+        .solution-slide {
+            background: linear-gradient(135deg, #1a3a52 0%, #2c5f8d 50%, #1a3a52 100%);
         }
 
-        /* Two-column grid: left text (~42%), right visuals (~58%) */
-        .solution-layout {
+        /* Override pitch-slide-content for nighttime sea vibe */
+        .solution-slide .pitch-slide-content {
+            background: #0f2236 !important;
+        }
+
+        /* Main container */
+        .solution-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            gap: clamp(0.6rem, 1.2vh, 1rem);
+            padding: clamp(1rem, 2vh, 1.5rem) clamp(1.5rem, 3vw, 2.5rem);
+        }
+
+        /* Title - white for night sky contrast */
+        .solution-title {
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            margin: 0 0 clamp(0.4rem, 0.8vh, 0.6rem) 0;
+            line-height: 1.2;
+            flex-shrink: 0;
+        }
+
+        /* Top row: 3 feature boxes */
+        .solution-features {
             display: grid;
-            grid-template-columns: 1fr 1.25fr;
-            gap: clamp(0.9rem, 1.8vw, 1.3rem);
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(0.8rem, 1.5vw, 1.2rem);
+            flex-shrink: 0;
+        }
+
+        /* Feature box - light against dark background */
+        .solution-feature-box {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 6px;
+            padding: clamp(0.65rem, 1.2vw, 0.9rem);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* Icon + title row */
+        .solution-feature-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: clamp(0.4rem, 0.8vh, 0.6rem);
+            flex-shrink: 0;
+        }
+
+        .solution-feature-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .solution-feature-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #b3e5fc;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .solution-feature-title {
+            font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+            font-weight: 700;
+            color: white;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        /* Feature bullets */
+        .solution-feature-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.15rem, 0.3vh, 0.2rem);
+        }
+
+        .solution-feature-box li {
+            font-size: clamp(0.6rem, 1vw, 0.72rem);
+            color: #c3d9e8;
+            line-height: 1.3;
+            padding-left: 0.8rem;
+            position: relative;
+            margin: 0;
+        }
+
+        .solution-feature-box li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #5eb3d6;
+            font-weight: bold;
+        }
+
+        /* Bottom row: 2 images side-by-side */
+        .solution-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1rem, 2vw, 1.5rem);
             flex: 1;
             min-height: 0;
             overflow: hidden;
         }
 
-        /* Left column - text cards */
-        .solution-text-column {
+        .solution-image-container {
             display: flex;
             flex-direction: column;
-            gap: clamp(0.7rem, 1.2vw, 0.85rem);
-            overflow-y: auto;
-            overflow-x: hidden;
-            padding-right: 0.2rem;
-        }
-
-        /* Clean card styling */
-        .solution-card {
-            background: white;
-            padding: clamp(0.7rem, 1.1vw, 0.9rem);
+            background: #0a1820;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-            border: 1px solid #f0f0f0;
-            flex-shrink: 0;
-        }
-
-        .solution-card h3 {
-            font-size: clamp(0.85rem, 1.5vw, 1rem);
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin: 0 0 clamp(0.25rem, 0.5vh, 0.35rem) 0;
-            line-height: 1.2;
-        }
-
-        .solution-card .solution-subtitle {
-            font-size: clamp(0.68rem, 1.1vw, 0.8rem);
-            color: var(--accent-blue);
-            font-weight: 600;
-            margin: 0 0 clamp(0.3rem, 0.6vh, 0.45rem) 0;
-            line-height: 1.4;
-        }
-
-        .solution-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .solution-card li {
-            font-size: clamp(0.62rem, 1vw, 0.75rem);
-            line-height: 1.4;
-            color: var(--text-dark);
-            margin-bottom: clamp(0.15rem, 0.4vh, 0.25rem);
-            padding-left: 0.9rem;
-            position: relative;
-        }
-
-        .solution-card li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-blue);
-            font-weight: bold;
-        }
-
-        /* Right column - images stacked */
-        .solution-visual-column {
-            display: flex;
-            flex-direction: column;
-            gap: clamp(0.7rem, 1.3vw, 1rem);
+            padding: clamp(0.6rem, 1.1vw, 0.85rem);
             min-height: 0;
+            overflow: hidden;
         }
 
-        .solution-image-block {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            min-height: 0;
-            background: #fafafa;
-            padding: clamp(0.5rem, 0.9vw, 0.7rem);
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-            border: 1px solid #f0f0f0;
-        }
-
-        .solution-image-block img {
+        .solution-image-container img {
             flex: 1;
             width: 100%;
             height: 100%;
             object-fit: contain;
-            border-radius: 3px;
+            border-radius: 4px;
+            min-height: 0;
+            background: #0a1820;
         }
 
         .solution-image-caption {
-            font-size: clamp(0.58rem, 0.9vw, 0.7rem);
-            color: #777;
-            margin-top: clamp(0.25rem, 0.5vh, 0.35rem);
+            font-size: clamp(0.58rem, 0.95vw, 0.7rem);
+            color: #a3c9d6;
+            margin-top: clamp(0.35rem, 0.6vh, 0.5rem);
             font-weight: 500;
             line-height: 1.3;
             flex-shrink: 0;
+            text-align: center;
         }
     </style>
 </head>
@@ -141,67 +176,92 @@
         </div>
     </header>
 
-    <div class="pitch-slide">
-        <div class="pitch-slide-content" style="background: white; display: flex; flex-direction: column;">
-            
-            <!-- Headline centered at top -->
-            <h1 class="solution-headline">Persistent autonomous maritime monitoring — with human-in-the-loop control</h1>
-            
-            <!-- Two-column layout: text on left, visuals on right -->
-            <div class="solution-layout">
+    <div class="pitch-slide solution-slide">
+        <div class="pitch-slide-content">
+            <div class="solution-container">
                 
-                <!-- Left column: three cards answering judging prompts -->
-                <div class="solution-text-column">
+                <!-- Title -->
+                <h1 class="solution-title">Solution / Product</h1>
+                
+                <!-- Row 1: Three feature boxes -->
+                <div class="solution-features">
                     
-                    <!-- Card 1: Product (Answers "What is your product or service?") -->
-                    <div class="solution-card">
-                        <h3>Sentinel-ASV</h3>
-                        <p class="solution-subtitle">Autonomous surface vessel built for continuous maritime monitoring</p>
+                    <!-- Box 1: Solution (Answers: "What is your solution to the problem?") -->
+                    <div class="solution-feature-box">
+                        <div class="solution-feature-header">
+                            <div class="solution-feature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Radar/Eye icon -->
+                                    <circle cx="12" cy="12" r="2"/>
+                                    <circle cx="12" cy="12" r="5"/>
+                                    <circle cx="12" cy="12" r="8"/>
+                                    <line x1="12" y1="4" x2="12" y2="1"/>
+                                    <line x1="12" y1="23" x2="12" y2="20"/>
+                                    <line x1="20" y1="12" x2="23" y2="12"/>
+                                    <line x1="1" y1="12" x2="4" y2="12"/>
+                                </svg>
+                            </div>
+                            <h3 class="solution-feature-title">Persistent Monitoring</h3>
+                        </div>
                         <ul>
-                            <li>Operates continuously without onboard crew</li>
-                            <li>Real-time visual + thermal data to a remote operator</li>
-                            <li>Monitoring-focused (not interdiction)</li>
+                            <li>24/7 coverage</li>
+                            <li>Remote oversight</li>
+                            <li>Always-on presence</li>
                         </ul>
                     </div>
                     
-                    <!-- Card 2: Core Capabilities (Answers "What is your solution to the problem?") -->
-                    <div class="solution-card">
-                        <h3>Core Capabilities</h3>
+                    <!-- Box 2: Product/Service (Answers: "What is your product or service?") -->
+                    <div class="solution-feature-box">
+                        <div class="solution-feature-header">
+                            <div class="solution-feature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Boat/Vessel icon -->
+                                    <path d="M12 22L3 18V8l9-4 9 4v10l-9 4z" stroke-linejoin="round"/>
+                                    <path d="M3 8h18M12 8v10M7 14h10"/>
+                                </svg>
+                            </div>
+                            <h3 class="solution-feature-title">Sentinel-ASV</h3>
+                        </div>
                         <ul>
-                            <li>24/7 sensing: visual + thermal, day/night operations</li>
-                            <li>Autonomous navigation: waypoint-based patrols in defined areas</li>
-                            <li>Live data streaming: continuous feed to shore-based operators</li>
-                            <li>Human-in-the-loop: operator oversight, alerts, intervention</li>
-                            <li>Monitoring-first architecture: persistent awareness without crew risk</li>
+                            <li>Uncrewed surface vessel</li>
+                            <li>Live video + thermal</li>
+                            <li>Patrol routes (waypoints)</li>
                         </ul>
                     </div>
                     
-                    <!-- Card 3: Differentiation (Answers "How is your solution unique?") -->
-                    <div class="solution-card">
-                        <h3>Why This Is Different</h3>
+                    <!-- Box 3: Uniqueness (Answers: "How is your solution unique?") -->
+                    <div class="solution-feature-box">
+                        <div class="solution-feature-header">
+                            <div class="solution-feature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Spark/Bolt icon -->
+                                    <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" stroke-linejoin="round" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="solution-feature-title">Why It Wins</h3>
+                        </div>
                         <ul>
-                            <li>Replaces costly crewed patrol coverage with autonomous persistence</li>
-                            <li>Extends beyond fixed cameras limited to line-of-sight</li>
-                            <li>Delivers continuous presence without shift limits or fatigue</li>
+                            <li>Cheaper than crewed patrols</li>
+                            <li>Wider than fixed cameras</li>
+                            <li>Human-in-the-loop control</li>
                         </ul>
                     </div>
                     
                 </div>
                 
-                <!-- Right column: stacked images with captions -->
-                <div class="solution-visual-column">
-                    <div class="solution-image-block">
+                <!-- Row 2: Two images side-by-side -->
+                <div class="solution-images">
+                    <div class="solution-image-container">
                         <img src="../assets/photo.png" alt="Sentinel-ASV vessel">
                         <p class="solution-image-caption">Sentinel-ASV concept render</p>
                     </div>
-                    <div class="solution-image-block">
-                        <img src="../assets/photodetails.png" alt="Sentinel-ASV system details">
-                        <p class="solution-image-caption">System architecture: sensors, propulsion, onboard computing, communications</p>
+                    <div class="solution-image-container">
+                        <img src="../assets/photodetails.png" alt="System architecture">
+                        <p class="solution-image-caption">System overview: sensors, compute, comms</p>
                     </div>
                 </div>
                 
             </div>
-            
         </div>
     </div>
 
