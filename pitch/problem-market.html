@@ -7,137 +7,355 @@
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .headline {
-            text-align: center;
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            font-weight: 600;
-            color: var(--primary-blue);
-            margin-bottom: clamp(0.75rem, 1.5vh, 1.25rem);
+        /* Single-slide 16:9 layout */
+        .pm-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            gap: clamp(0.6rem, 1.2vh, 1rem);
+            padding: clamp(0.8rem, 1.5vh, 1.2rem);
         }
-        .problem-buckets {
+
+        /* Title */
+        .pm-title {
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-align: center;
+            margin: 0 0 clamp(0.4rem, 0.6vh, 0.5rem) 0;
+            line-height: 1.1;
+            flex-shrink: 0;
+        }
+
+        /* Section headers */
+        .pm-section-header {
+            font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+        }
+
+        /* Context section with images */
+        .pm-context-section {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.5vh, 0.4rem);
+            flex-shrink: 0;
+        }
+
+        /* Top visual strip - two images side by side */
+        .pm-visual-strip {
+            display: flex;
+            gap: clamp(0.6rem, 1.2vw, 0.9rem);
+            height: clamp(120px, 20vh, 160px);
+            flex-shrink: 0;
+        }
+
+        .pm-visual-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 0;
+        }
+
+        .pm-visual-item img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            flex: 1;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .pm-visual-item:first-child img {
+            object-fit: contain;
+            background-color: #f9f9f9;
+        }
+
+        .pm-visual-caption {
+            font-size: clamp(0.55rem, 0.8vw, 0.62rem);
+            color: #666;
+            margin-top: 0.3rem;
+            font-style: italic;
+            line-height: 1.2;
+            flex-shrink: 0;
+        }
+
+        /* Middle section - two columns */
+        .pm-middle {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: clamp(0.8rem, 1.6vw, 1.1rem);
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+            margin-top: clamp(1.5rem, 3vh, 2.5rem);
+        }
+
+        /* Left: Problem cards */
+        .pm-problem-section {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.35rem, 0.6vh, 0.5rem);
+            min-height: 0;
+        }
+
+        .pm-problem-label {
+            font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+        }
+
+        .pm-problem-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: clamp(0.75rem, 1.5vw, 1.25rem);
-            margin-bottom: clamp(0.75rem, 1.5vh, 1.25rem);
+            gap: clamp(0.4rem, 0.8vw, 0.6rem);
+            flex: 1;
         }
-        .bucket {
+
+        .pm-card {
             background: white;
-            padding: clamp(0.75rem, 1.5vw, 1rem);
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            padding: clamp(0.5rem, 0.9vw, 0.65rem);
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 0;
+            overflow: hidden;
         }
-        .bucket-title {
-            font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+
+        .pm-card-title {
+            font-size: clamp(0.65rem, 1vw, 0.75rem);
             font-weight: 700;
             color: var(--accent-blue);
-            margin-bottom: clamp(0.4rem, 1vh, 0.65rem);
-            text-align: center;
+            margin: 0 0 0.3rem 0;
+            flex-shrink: 0;
         }
-        .bucket ul {
+
+        .pm-card ul {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
         }
-        .bucket li {
-            font-size: clamp(0.7rem, 1.3vw, 0.85rem);
-            line-height: 1.4;
-            color: var(--text-dark);
-            margin-bottom: clamp(0.25rem, 0.5vh, 0.4rem);
-            padding-left: 1rem;
+
+        .pm-card li {
+            font-size: clamp(0.56rem, 0.85vw, 0.64rem);
+            color: #555;
+            line-height: 1.3;
+            margin-bottom: 0;
+            padding-left: 0.6rem;
             position: relative;
         }
-        .bucket li:before {
+
+        .pm-card li:before {
             content: "•";
             position: absolute;
             left: 0;
             color: var(--accent-blue);
         }
-        .visual-section {
+
+        /* Workflow diagram section below cards */
+        .pm-workflow-diagram {
+            grid-column: 1 / -1;
             display: flex;
-            gap: clamp(0.5rem, 1vw, 1rem);
-            align-items: center;
-            margin-bottom: clamp(0.75rem, 1.5vh, 1rem);
+            flex-direction: column;
+            gap: clamp(0.4rem, 0.8vh, 0.6rem);
+            margin-top: 0;
         }
-        .visual-box {
-            flex: 1;
-            text-align: center;
-        }
-        .visual-box img {
-            width: 100%;
-            max-height: clamp(120px, 18vh, 180px);
-            object-fit: cover;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        .visual-caption {
-            font-size: clamp(0.6rem, 1vw, 0.75rem);
-            color: var(--text-muted);
-            margin-top: 0.4rem;
-            font-style: italic;
-        }
-        .market-reality {
-            background: #f8f9fa;
-            padding: clamp(0.75rem, 1.5vw, 1rem);
-            border-radius: 6px;
-            border-left: 4px solid var(--accent-blue);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .market-reality h4 {
-            font-size: clamp(0.75rem, 1.3vw, 0.9rem);
+
+        .pm-workflow-label {
+            font-size: clamp(0.82rem, 1.2vw, 0.95rem);
             font-weight: 700;
             color: var(--primary-blue);
-            margin-bottom: clamp(0.4rem, 1vh, 0.65rem);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .market-reality ul {
-            list-style: none;
-            padding: 0;
             margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
         }
-        .market-reality li {
-            font-size: clamp(0.65rem, 1.2vw, 0.8rem);
-            line-height: 1.4;
-            color: #6c757d;
-            margin-bottom: clamp(0.25rem, 0.5vh, 0.35rem);
-            padding-left: 1rem;
+
+        .pm-workflow-sources {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(0.3rem, 0.6vw, 0.5rem);
             position: relative;
         }
-        .market-reality li:before {
-            content: "→";
+
+        .pm-workflow-source {
+            background: #e8f4f8;
+            border: 2px solid var(--accent-blue);
+            border-radius: 6px;
+            padding: clamp(0.5rem, 0.9vw, 0.7rem);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            position: relative;
+        }
+
+        .pm-workflow-source::after {
+            content: "↓";
             position: absolute;
-            left: 0;
+            bottom: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
             color: var(--accent-blue);
             font-weight: bold;
         }
-        .judging-prompts {
-            background: #f8f9fa;
-            padding: clamp(0.75rem, 1.5vw, 1rem);
-            border-radius: 6px;
-            margin: 0 auto clamp(0.75rem, 1.5vh, 1rem);
-            max-width: 1200px;
-            border-left: 4px solid var(--accent-blue);
+
+        .pm-workflow-emoji {
+            font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+            line-height: 1;
         }
-        .judging-prompts h3 {
-            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+
+        .pm-workflow-label {
+            font-weight: 700;
             color: var(--primary-blue);
-            margin-bottom: clamp(0.4rem, 1vh, 0.65rem);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: clamp(0.62rem, 0.95vw, 0.72rem);
+            line-height: 1.1;
         }
-        .judging-prompts ul {
+
+        .pm-workflow-desc {
+            font-size: clamp(0.54rem, 0.85vw, 0.64rem);
+            color: #666;
+            line-height: 1.2;
+        }
+
+        .pm-workflow-operator {
+            background: #003d5c;
+            border-radius: 6px;
+            padding: clamp(0.6rem, 1.1vw, 0.8rem);
+            text-align: center;
+            color: white;
+            margin-top: clamp(1.2rem, 2vh, 1.5rem);
+        }
+
+        .pm-workflow-operator-title {
+            font-weight: 700;
+            color: white;
+            font-size: clamp(0.68rem, 1.05vw, 0.8rem);
+            margin: 0 0 0.15rem 0;
+            line-height: 1.25;
+        }
+
+        .pm-workflow-operator-subtitle {
+            font-size: clamp(0.6rem, 0.95vw, 0.7rem);
+            color: #b0d4e3;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        /* Right: Market context */
+        .pm-market-section {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.35rem, 0.6vh, 0.5rem);
+            min-height: 0;
+        }
+
+        .pm-market-label {
+            font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+        }
+
+        .pm-market-content {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.25rem, 0.4vh, 0.35rem);
+            flex: 1;
+            min-height: 0;
+        }
+
+        .pm-chart-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            padding: clamp(0.6rem, 1.1vw, 0.8rem);
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .pm-chart-container img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .pm-market-bullets {
             list-style: none;
             padding: 0;
-            font-size: clamp(0.65rem, 1.1vw, 0.75rem);
-            color: #6c757d;
-            line-height: 1.5;
-            display: flex;
-            gap: clamp(0.75rem, 2vw, 1.5rem);
-            flex-wrap: wrap;
-        }
-        .judging-prompts li {
             margin: 0;
+            font-size: clamp(0.58rem, 0.9vw, 0.68rem);
+            color: #555;
+            line-height: 1.35;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .pm-market-bullets li {
+            margin-bottom: 0;
+            padding-left: 0.7rem;
+            position: relative;
+        }
+
+        .pm-market-bullets li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+        }
+
+        /* Bottom: Market Reality */
+        .pm-bottom {
+            background: #f0f7fb;
+            padding: clamp(0.65rem, 1.2vw, 0.85rem);
+            border-radius: 4px;
+            border-left: 3px solid var(--accent-blue);
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+
+        .pm-bottom-label {
+            font-size: clamp(0.75rem, 1.1vw, 0.85rem);
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 0 0.25rem 0;
+        }
+
+        .pm-bottom-text {
+            font-size: clamp(0.6rem, 0.95vw, 0.7rem);
+            color: #555;
+            margin: 0;
+            line-height: 1.35;
         }
     </style>
 </head>
@@ -158,73 +376,113 @@
     </header>
 
     <div class="pitch-slide">
-        <div class="pitch-slide-content" style="background: #f8f9fa;">
-            <h1 class="pitch-hero-title" style="text-align: center;">Problem & Market Opportunity</h1>
-            
-            <div class="judging-prompts">
-                <h3>Judging Prompts</h3>
-                <ul>
-                    <li>• What pain are you solving?</li>
-                    <li>• What problem is your company addressing?</li>
-                    <li>• What is your market opportunity?</li>
-                    <li>• How big is the whole market?</li>
-                </ul>
-            </div>
-                
-                <p class="headline">Maritime monitoring today: fragmented, expensive, and non-persistent</p>
-                
-                <div class="problem-buckets">
-                    <div class="bucket">
-                        <h3 class="bucket-title">Coverage</h3>
-                        <ul>
-                            <li>Crewed patrols = shift-based, limited hours</li>
-                            <li>Fixed cameras = blind spots, static</li>
-                            <li>No continuous mobile awareness</li>
-                        </ul>
+        <div class="pitch-slide-content" style="background: white; display: flex; flex-direction: column;">
+            <div class="pm-container">
+                <!-- Title -->
+                <h1 class="pm-title">Problem & Market Opportunity</h1>
+
+                <!-- Context: Images -->
+                <div class="pm-context-section">
+                    <p class="pm-section-header">Context</p>
+                    <div class="pm-visual-strip">
+                        <div class="pm-visual-item">
+                            <img src="../assets/map.png" alt="Global maritime shipping lanes">
+                            <p class="pm-visual-caption">80% of global trade moves by sea</p>
+                        </div>
+                        <div class="pm-visual-item">
+                            <img src="../assets/busy-ports.png" alt="Active port terminal operations">
+                            <p class="pm-visual-caption">Active port terminal operations <span style="font-size: 0.85em; color: #999;">Source: GCaptain - Port of Los Angeles Operations</span></p>
+                        </div>
                     </div>
-                    
-                    <div class="bucket">
-                        <h3 class="bucket-title">Economics</h3>
-                        <ul>
-                            <li>Patrol boats costly to operate</li>
-                            <li>Incidents trigger cascading costs</li>
-                            <li>Budget vs. coverage mismatch</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bucket">
-                        <h3 class="bucket-title">Workflow</h3>
-                        <ul>
-                            <li>Reactive, not proactive</li>
-                            <li>Fragmented data streams</li>
-                            <li>No unified operator view</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="visual-section">
-                    <div class="visual-box">
-                        <img src="../assets/map.png" alt="Global maritime shipping lanes">
-                        <p class="visual-caption">80% of global trade moves by sea</p>
-                    </div>
-                    <div class="visual-box">
-                        <img src="../assets/busy-ports.png" alt="Port operations">
-                        <p class="visual-caption">Active port terminal operations</p>
-                    </div>
-                </div>
-                
-                <div class="market-reality">
-                    <h4>Market Reality</h4>
-                    <ul>
-                        <li>Port authorities, terminal operators, maritime security contractors already budget for monitoring</li>
-                        <li>Regulatory compliance (ISPS, MTSA) requires continuous security awareness</li>
-                        <li>WaveShift targets this existing budget with autonomous, cost-effective coverage</li>
-                    </ul>
                 </div>
 
-            <div class="pitch-nav-bottom" style="justify-content: center; margin-top: clamp(0.5rem, 1vh, 1rem);">
-                <a href="cover.html" class="secondary" style="background: #6c757d; color: white; text-decoration: none; border-radius: 4px; transition: background 0.3s;">← Back</a>
-                <a href="solution.html" style="background: var(--accent-blue); color: white; text-decoration: none; border-radius: 4px; transition: background 0.3s;">Next: Solution →</a>
+                <!-- Middle section: Two columns -->
+                <div class="pm-middle">
+                    <!-- Left: Problem cards -->
+                    <div class="pm-problem-section">
+                        <p class="pm-problem-label">The Problem</p>
+                        
+                        <div class="pm-problem-cards">
+                            <div class="pm-card">
+                                <div>
+                                    <h3 class="pm-card-title">Coverage</h3>
+                                    <ul>
+                                        <li>Patrol shifts → gaps</li>
+                                        <li>Fixed cameras → blind spots</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="pm-card">
+                                <div>
+                                    <h3 class="pm-card-title">Economics</h3>
+                                    <ul>
+                                        <li>Crews/vessels too costly for 24/7</li>
+                                        <li>Budgets cap coverage</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="pm-card">
+                                <div>
+                                    <h3 class="pm-card-title">Workflow</h3>
+                                    <ul>
+                                        <li>Reactive operations</li>
+                                        <li>Disconnected systems</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Why Current Approach Fails: Workflow diagram below cards -->
+                        <div class="pm-workflow-diagram">
+                            <p class="pm-workflow-label">Why Current Approach Fails</p>
+                            <div class="pm-workflow-sources">
+                                <div class="pm-workflow-source">
+                                    <div class="pm-workflow-emoji">📹</div>
+                                    <div class="pm-workflow-label">Cameras</div>
+                                    <div class="pm-workflow-desc">Limited view</div>
+                                </div>
+                                <div class="pm-workflow-source">
+                                    <div class="pm-workflow-emoji">📊</div>
+                                    <div class="pm-workflow-label">Software</div>
+                                    <div class="pm-workflow-desc">Separate systems</div>
+                                </div>
+                                <div class="pm-workflow-source">
+                                    <div class="pm-workflow-emoji">🚤</div>
+                                    <div class="pm-workflow-label">Patrols</div>
+                                    <div class="pm-workflow-desc">Too slow & costly</div>
+                                </div>
+                            </div>
+                            <div class="pm-workflow-operator">
+                                <p class="pm-workflow-operator-title">Today's reality: one person manually stitching together cameras, patrols, and software — this does not scale.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Market context -->
+                    <div class="pm-market-section">
+                        <p class="pm-market-label">Market Opportunity <span style="font-size: 0.85em; color: #999;">Source: Persistence Market Research (2025–2026)</span></p>
+                        
+                        <div class="pm-market-content">
+                            <div class="pm-chart-container">
+                                <img src="../assets/industrycontext.jpeg" alt="Global Maritime Security Market Size 2025-2032">
+                            </div>
+
+                            <ul class="pm-market-bullets">
+                                <li>Ports already spend money on security</li>
+                                <li>They must monitor by law</li>
+                                <li>WaveShift gives more coverage for less money</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom: Market Reality -->
+                <div class="pm-bottom">
+                    <p class="pm-bottom-label">Bottom Line</p>
+                    <p class="pm-bottom-text">Ports already have budgets and mandates. WaveShift delivers more coverage for the same cost.</p>
+                </div>
             </div>
         </div>
     </div>
