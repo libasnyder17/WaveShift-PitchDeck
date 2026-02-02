@@ -2965,6 +2965,12 @@ body.pitch-deck-body {
     width: 100vw;
 }
 
+/* Hide navbar on pitch deck pages */
+.pitch-slide ~ .navbar,
+body:has(.pitch-slide) .navbar {
+    display: none !important;
+}
+
 /* Main slide container - 16:9 aspect ratio locked */
 .pitch-slide {
     position: relative;
