@@ -17,30 +17,40 @@
         .slide-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto 1fr auto;
-            gap: clamp(0.75rem, 1.5vw, 1.25rem);
+            grid-template-rows: 1fr 1.2fr 1fr;
+            gap: clamp(0.5rem, 1vw, 0.85rem);
             flex: 1;
             overflow: hidden;
         }
         .card {
             background: white;
             border-radius: 6px;
-            padding: clamp(0.75rem, 1.5vw, 1.25rem);
+            padding: clamp(0.6rem, 1.2vw, 1rem);
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
+            min-height: 0;
+            overflow: hidden;
         }
         .card h3 {
-            font-size: clamp(0.9rem, 1.7vw, 1.15rem);
+            font-size: clamp(0.85rem, 1.6vw, 1.1rem);
             color: var(--primary-blue);
-            margin: 0 0 clamp(0.5rem, 1vh, 0.85rem) 0;
+            margin: 0 0 clamp(0.4rem, 0.8vh, 0.65rem) 0;
             font-weight: 600;
+            flex-shrink: 0;
         }
         .card-content {
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
+            min-height: 0;
+            overflow: hidden;
+        }
+        .card-content img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
         }
         .revenue-progression {
             grid-column: 1;
@@ -215,6 +225,21 @@
         .metric-label {
             color: var(--text-dark);
         }
+        .image-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            min-height: 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body class="pitch-deck-body">
@@ -319,56 +344,114 @@
                     </div>
                 </div>
 
-                <!-- SOM Math Breakdown (bottom-left) -->
+                <!-- TAM SAM SOM Funnel (bottom-left) -->
                 <div class="card som-breakdown">
-                    <h3>SOM Math</h3>
-                    <div class="card-content">
-                        <div class="som-math">
-                            <div class="som-math-row">
-                                <span class="som-math-label">Addressable Ports</span>
-                                <span class="som-math-value">20–50</span>
-                            </div>
-                            <div class="som-operator">×</div>
-                            <div class="som-math-row">
-                                <span class="som-math-label">Vessels per Port (avg)</span>
-                                <span class="som-math-value">~2 (1–5 range)</span>
-                            </div>
-                            <div class="som-operator">×</div>
-                            <div class="som-math-row">
-                                <span class="som-math-label">Revenue per Vessel/Year</span>
-                                <span class="som-math-value">$250k–$400k</span>
-                            </div>
-                        </div>
+                    <div class="card-content" style="min-height: 0;">
+                        <svg viewBox="0 0 800 420" width="100%" height="100%" role="img" aria-label="TAM SAM SOM funnel" style="object-fit: contain;">
+                            <defs>
+                                <style>
+                                    .tam-label { font: 500 18px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#4a6b7d; }
+                                    .tam-sub { font: 400 14px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#6b8899; }
+                                    .sam-label { font: 500 18px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#0066a1; }
+                                    .sam-sub { font: 400 14px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#4a8db3; }
+                                    .som-label { font: 700 22px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:white; }
+                                    .som-sub { font: 600 16px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#e6f2f7; }
+                                    .funnel-box-light { stroke:#c0d9e8; stroke-width:1.5; rx:12; }
+                                    .funnel-box-strong { stroke:#003d5c; stroke-width:3; rx:12; }
+                                </style>
+                            </defs>
+
+                            <!-- TAM -->
+                            <rect x="40" y="30" width="720" height="75" class="funnel-box-light" fill="#f5f9fb"/>
+                            <text x="400" y="56" text-anchor="middle" class="tam-label">TAM — Maritime Security &amp; Monitoring Spend</text>
+                            <text x="400" y="77" text-anchor="middle" class="tam-sub">Global spending across port security, patrol services &amp; monitoring infrastructure</text>
+
+                            <!-- Divider gap -->
+                            <!-- SAM -->
+                            <rect x="90" y="135" width="620" height="75" class="funnel-box-light" fill="#e6f2f7"/>
+                            <text x="400" y="161" text-anchor="middle" class="sam-label">SAM — Port &amp; Near-Shore Monitoring</text>
+                            <text x="400" y="182" text-anchor="middle" class="sam-sub">Commercial ports using monitoring-first, human-in-the-loop autonomy</text>
+
+                            <!-- Divider gap -->
+                            <!-- SOM -->
+                            <rect x="180" y="240" width="440" height="95" class="funnel-box-strong" fill="#003d5c"/>
+                            <text x="400" y="273" text-anchor="middle" class="som-label">SOM — Initial Wedge (3–5 years)</text>
+                            <text x="400" y="298" text-anchor="middle" class="som-sub">20–50 ports · 1–5 vessels per site</text>
+                            <text x="400" y="318" text-anchor="middle" class="som-sub">Pilot-led adoption</text>
+                        </svg>
                     </div>
                 </div>
 
-                <!-- Customer Success Metrics (bottom-right) -->
+                <!-- Annual Cost Stack Comparison (bottom-right) -->
                 <div class="card customer-metrics">
-                    <h3>Customer Success Metrics</h3>
-                    <div class="card-content">
-                        <div class="metrics-dashboard">
-                            <div class="dashboard-title">Sentinel Operations Dashboard</div>
-                            <div class="metric-item">
-                                <div class="metric-icon"></div>
-                                <div class="metric-label">Cost per coverage hour</div>
-                            </div>
-                            <div class="metric-item">
-                                <div class="metric-icon"></div>
-                                <div class="metric-label">Coverage hours delivered</div>
-                            </div>
-                            <div class="metric-item">
-                                <div class="metric-icon"></div>
-                                <div class="metric-label">Operator efficiency gains</div>
-                            </div>
-                            <div class="metric-item">
-                                <div class="metric-icon"></div>
-                                <div class="metric-label">Verified incidents logged</div>
-                            </div>
-                            <div class="metric-item">
-                                <div class="metric-icon"></div>
-                                <div class="metric-label">Audit-ready reporting</div>
-                            </div>
-                        </div>
+                    <div class="card-content" style="min-height: 0;">
+                        <svg viewBox="0 0 800 520" width="100%" height="100%" role="img" aria-label="Cost stack comparison: Crewed Patrol vs Sentinel-ASV" style="object-fit: contain;">
+                            <defs>
+                                <style>
+                                    .chart-title { font: 700 20px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#003d5c; }
+                                    .bar-label { font: 600 15px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#003d5c; }
+                                    .segment-label { font: 500 13px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:white; }
+                                    .legend-text { font: 500 13px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#003d5c; }
+                                    .caption-text { font: 500 14px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#0066a1; }
+                                </style>
+                            </defs>
+
+                            <!-- Chart Title -->
+                            <text x="400" y="30" text-anchor="middle" class="chart-title">Annual Cost Stack Comparison</text>
+
+                            <!-- Left Bar: Crewed Patrol -->
+                            <text x="200" y="470" text-anchor="middle" class="bar-label">Crewed Patrol</text>
+                            <text x="200" y="488" text-anchor="middle" class="legend-text">(labor-heavy model)</text>
+                            
+                            <!-- Labor (largest - 55%) -->
+                            <rect x="100" y="80" width="200" height="165" fill="#003d5c" rx="4"/>
+                            <text x="200" y="160" text-anchor="middle" class="segment-label">Labor</text>
+                            <text x="200" y="178" text-anchor="middle" class="segment-label">(55%)</text>
+
+                            <!-- Fuel (25%) -->
+                            <rect x="100" y="250" width="200" height="75" fill="#0066a1" rx="4"/>
+                            <text x="200" y="290" text-anchor="middle" class="segment-label">Fuel (25%)</text>
+
+                            <!-- Maintenance (15%) -->
+                            <rect x="100" y="330" width="200" height="45" fill="#1a8cbe" rx="4"/>
+                            <text x="200" y="356" text-anchor="middle" class="segment-label">Maint. (15%)</text>
+
+                            <!-- Limited Coverage / Downtime (5%) -->
+                            <rect x="100" y="380" width="200" height="15" fill="#a8d5e8" rx="4"/>
+                            
+                            <text x="200" y="415" text-anchor="middle" style="font: 500 12px system-ui; fill:#0066a1;">+ Limited Coverage</text>
+                            <text x="200" y="430" text-anchor="middle" style="font: 500 12px system-ui; fill:#0066a1;">+ Scheduling Inefficiency</text>
+
+
+                            <!-- Right Bar: Sentinel-ASV Service -->
+                            <text x="600" y="470" text-anchor="middle" class="bar-label">Sentinel-ASV Service</text>
+                            <text x="600" y="488" text-anchor="middle" class="legend-text">(capex amortized + ops)</text>
+
+                            <!-- Hardware Amortized (35%) -->
+                            <rect x="500" y="80" width="200" height="105" fill="#0066a1" rx="4"/>
+                            <text x="600" y="128" text-anchor="middle" class="segment-label">Hardware</text>
+                            <text x="600" y="146" text-anchor="middle" class="segment-label">Amortized (35%)</text>
+
+                            <!-- Software + Ops (30%) -->
+                            <rect x="500" y="190" width="200" height="90" fill="#1a8cbe" rx="4"/>
+                            <text x="600" y="232" text-anchor="middle" class="segment-label">Software + Ops</text>
+                            <text x="600" y="250" text-anchor="middle" class="segment-label">(30%)</text>
+
+                            <!-- Connectivity (20%) -->
+                            <rect x="500" y="285" width="200" height="60" fill="#a8d5e8" rx="4"/>
+                            <text x="600" y="320" text-anchor="middle" style="font: 500 13px system-ui; fill:#003d5c;">Connectivity (20%)</text>
+
+                            <!-- Maintenance (15%) -->
+                            <rect x="500" y="350" width="200" height="45" fill="#c0d9e8" rx="4"/>
+                            <text x="600" y="376" text-anchor="middle" style="font: 500 13px system-ui; fill:#003d5c;">Maint. (15%)</text>
+                            
+                            <text x="600" y="415" text-anchor="middle" style="font: 500 12px system-ui; fill:#0066a1; font-weight:700;">+ Persistent Coverage</text>
+                            <text x="600" y="430" text-anchor="middle" style="font: 500 12px system-ui; fill:#0066a1; font-weight:700;">+ Minimal Downtime</text>
+
+                            <!-- Legend -->
+                            <text x="50" y="65" class="legend-text">High Cost →</text>
+                            <text x="750" y="65" text-anchor="end" class="legend-text">← Optimized</text>
+                        </svg>
                     </div>
                 </div>
             </div>
