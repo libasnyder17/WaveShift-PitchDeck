@@ -7,46 +7,30 @@
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .pitch-page {
-            padding: 2rem 2rem 1rem 2rem;
-            max-height: 100vh;
-            overflow: hidden;
-        }
-        .pitch-hero-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        .single-slide-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
         .headline {
             text-align: center;
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 2vw, 1.3rem);
             font-weight: 600;
             color: var(--primary-blue);
-            margin-bottom: 1.5rem;
+            margin-bottom: clamp(0.75rem, 1.5vh, 1.25rem);
         }
         .problem-buckets {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: clamp(0.75rem, 1.5vw, 1.25rem);
+            margin-bottom: clamp(0.75rem, 1.5vh, 1.25rem);
         }
         .bucket {
             background: white;
-            padding: 1rem;
+            padding: clamp(0.75rem, 1.5vw, 1rem);
             border-radius: 6px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
         .bucket-title {
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 1.6vw, 1.1rem);
             font-weight: 700;
             color: var(--accent-blue);
-            margin-bottom: 0.75rem;
+            margin-bottom: clamp(0.4rem, 1vh, 0.65rem);
             text-align: center;
         }
         .bucket ul {
@@ -55,11 +39,11 @@
             margin: 0;
         }
         .bucket li {
-            font-size: 0.9rem;
+            font-size: clamp(0.7rem, 1.3vw, 0.85rem);
             line-height: 1.4;
             color: var(--text-dark);
-            margin-bottom: 0.5rem;
-            padding-left: 1.2rem;
+            margin-bottom: clamp(0.25rem, 0.5vh, 0.4rem);
+            padding-left: 1rem;
             position: relative;
         }
         .bucket li:before {
@@ -70,9 +54,9 @@
         }
         .visual-section {
             display: flex;
-            gap: 1rem;
+            gap: clamp(0.5rem, 1vw, 1rem);
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: clamp(0.75rem, 1.5vh, 1rem);
         }
         .visual-box {
             flex: 1;
@@ -80,30 +64,30 @@
         }
         .visual-box img {
             width: 100%;
-            max-height: 180px;
+            max-height: clamp(120px, 18vh, 180px);
             object-fit: cover;
             border-radius: 6px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
         .visual-caption {
-            font-size: 0.75rem;
+            font-size: clamp(0.6rem, 1vw, 0.75rem);
             color: var(--text-muted);
-            margin-top: 0.5rem;
+            margin-top: 0.4rem;
             font-style: italic;
         }
         .market-reality {
             background: #f8f9fa;
-            padding: 1rem;
+            padding: clamp(0.75rem, 1.5vw, 1rem);
             border-radius: 6px;
             border-left: 4px solid var(--accent-blue);
             max-width: 900px;
             margin: 0 auto;
         }
         .market-reality h4 {
-            font-size: 0.95rem;
+            font-size: clamp(0.75rem, 1.3vw, 0.9rem);
             font-weight: 700;
             color: var(--primary-blue);
-            margin-bottom: 0.75rem;
+            margin-bottom: clamp(0.4rem, 1vh, 0.65rem);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -113,11 +97,11 @@
             margin: 0;
         }
         .market-reality li {
-            font-size: 0.85rem;
+            font-size: clamp(0.65rem, 1.2vw, 0.8rem);
             line-height: 1.4;
             color: #6c757d;
-            margin-bottom: 0.4rem;
-            padding-left: 1.2rem;
+            margin-bottom: clamp(0.25rem, 0.5vh, 0.35rem);
+            padding-left: 1rem;
             position: relative;
         }
         .market-reality li:before {
@@ -127,37 +111,40 @@
             color: var(--accent-blue);
             font-weight: bold;
         }
-        .pitch-nav-bottom {
-            text-align: center;
-            margin-top: 1rem;
+        .judging-prompts {
+            background: #f8f9fa;
+            padding: clamp(0.75rem, 1.5vw, 1rem);
+            border-radius: 6px;
+            margin: 0 auto clamp(0.75rem, 1.5vh, 1rem);
+            max-width: 1200px;
+            border-left: 4px solid var(--accent-blue);
+        }
+        .judging-prompts h3 {
+            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+            color: var(--primary-blue);
+            margin-bottom: clamp(0.4rem, 1vh, 0.65rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .judging-prompts ul {
+            list-style: none;
+            padding: 0;
+            font-size: clamp(0.65rem, 1.1vw, 0.75rem);
+            color: #6c757d;
+            line-height: 1.5;
             display: flex;
-            justify-content: center;
-            gap: 0.75rem;
+            gap: clamp(0.75rem, 2vw, 1.5rem);
+            flex-wrap: wrap;
         }
-        .pitch-nav-bottom a {
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 4px;
-            background: var(--accent-blue);
-            color: white;
-            transition: background 0.3s;
-            font-size: 0.9rem;
-        }
-        .pitch-nav-bottom a:hover {
-            background: var(--primary-blue);
-        }
-        .pitch-nav-bottom a.secondary {
-            background: #6c757d;
-        }
-        .pitch-nav-bottom a.secondary:hover {
-            background: #5a6268;
+        .judging-prompts li {
+            margin: 0;
         }
     </style>
 </head>
-<body>
+<body class="pitch-deck-body">
     <header class="navbar">
         <div class="container">
-            <div class="logo"><img src="../assets/waveshift-logo.png" alt="WaveShift Logo" style="height: 150px; vertical-align: middle;"></div>
+            <div class="logo"><img src="../assets/waveshift-logo.png" alt="WaveShift Logo"></div>
             <nav class="nav-links">
                 <a href="../index.html">Home</a>
                 <a href="../underlying-magic-technology.html">Technology</a>
@@ -170,20 +157,19 @@
         </div>
     </header>
 
-    <main>
-        <section class="pitch-page">
-            <div class="single-slide-container">
-                <h1 class="pitch-hero-title">Problem & Market Opportunity</h1>
-                
-                <div style="background: #f8f9fa; padding: 1rem; border-radius: 6px; margin: 0 auto 1rem; max-width: 1200px; border-left: 4px solid var(--accent-blue);">
-                    <h3 style="font-size: 0.85rem; color: var(--primary-blue); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">Judging Prompts</h3>
-                    <ul style="list-style: none; padding: 0; font-size: 0.8rem; color: #6c757d; line-height: 1.6; display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                        <li style="margin: 0;">• What pain are you solving?</li>
-                        <li style="margin: 0;">• What problem is your company addressing?</li>
-                        <li style="margin: 0;">• What is your market opportunity?</li>
-                        <li style="margin: 0;">• How big is the whole market?</li>
-                    </ul>
-                </div>
+    <div class="pitch-slide">
+        <div class="pitch-slide-content" style="background: #f8f9fa;">
+            <h1 class="pitch-hero-title" style="text-align: center;">Problem & Market Opportunity</h1>
+            
+            <div class="judging-prompts">
+                <h3>Judging Prompts</h3>
+                <ul>
+                    <li>• What pain are you solving?</li>
+                    <li>• What problem is your company addressing?</li>
+                    <li>• What is your market opportunity?</li>
+                    <li>• How big is the whole market?</li>
+                </ul>
+            </div>
                 
                 <p class="headline">Maritime monitoring today: fragmented, expensive, and non-persistent</p>
                 
@@ -236,19 +222,12 @@
                     </ul>
                 </div>
 
-                <div class="pitch-nav-bottom">
-                    <a href="cover.html" class="secondary">← Back</a>
-                    <a href="solution.html">Next: Solution →</a>
-                </div>
+            <div class="pitch-nav-bottom" style="justify-content: center; margin-top: clamp(0.5rem, 1vh, 1rem);">
+                <a href="cover.html" class="secondary" style="background: #6c757d; color: white; text-decoration: none; border-radius: 4px; transition: background 0.3s;">← Back</a>
+                <a href="solution.html" style="background: var(--accent-blue); color: white; text-decoration: none; border-radius: 4px; transition: background 0.3s;">Next: Solution →</a>
             </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 WaveShift. Autonomous Maritime Systems | Early-Stage Venture</p>
         </div>
-    </footer>
+    </div>
 
     <script src="../script.js"></script>
 </body>

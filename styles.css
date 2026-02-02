@@ -2950,3 +2950,227 @@ body {
         padding: 2.5rem 0;
     }
 }
+
+/* ===========================
+   PITCH DECK SLIDE SYSTEM
+   PowerPoint-Style Layout
+   =========================== */
+
+/* Only apply to /pitch pages - prevent scrolling */
+body.pitch-deck-body {
+    overflow: hidden !important;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Main slide container - 16:9 aspect ratio locked */
+.pitch-slide {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* Aspect ratio preservation for screenshots */
+@media (min-aspect-ratio: 16/9) {
+    .pitch-slide {
+        height: 100vh;
+        width: calc(100vh * 16 / 9);
+        max-width: 100vw;
+        margin: 0 auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .pitch-slide {
+        width: 100vw;
+        height: calc(100vw * 9 / 16);
+        max-height: 100vh;
+        margin: auto 0;
+    }
+}
+
+/* Safe margin for content - prevents edge clipping on export */
+.pitch-slide-content {
+    padding: clamp(1rem, 2vw, 2.5rem) clamp(1.5rem, 3vw, 3.5rem);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Responsive typography using clamp() */
+.pitch-slide h1,
+.pitch-slide .pitch-hero-title {
+    font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    margin-bottom: clamp(0.5rem, 1.5vw, 1.5rem);
+    line-height: 1.2;
+}
+
+.pitch-slide h2 {
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    font-weight: 700;
+    margin-bottom: clamp(0.4rem, 1vw, 1rem);
+    line-height: 1.3;
+}
+
+.pitch-slide h3 {
+    font-size: clamp(0.9rem, 1.8vw, 1.4rem);
+    font-weight: 700;
+    margin-bottom: clamp(0.3rem, 0.8vw, 0.8rem);
+    line-height: 1.3;
+}
+
+.pitch-slide h4 {
+    font-size: clamp(0.75rem, 1.4vw, 1.1rem);
+    font-weight: 600;
+    margin-bottom: clamp(0.25rem, 0.6vw, 0.6rem);
+}
+
+.pitch-slide p,
+.pitch-slide li {
+    font-size: clamp(0.7rem, 1.2vw, 1rem);
+    line-height: 1.5;
+}
+
+.pitch-slide .small-text,
+.pitch-slide caption,
+.pitch-slide .caption {
+    font-size: clamp(0.6rem, 1vw, 0.85rem);
+    line-height: 1.4;
+}
+
+/* Image scaling - never overflow */
+.pitch-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}
+
+.pitch-slide figure {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Lists - compact spacing */
+.pitch-slide ul,
+.pitch-slide ol {
+    margin: 0;
+    padding-left: clamp(1rem, 2vw, 1.5rem);
+}
+
+.pitch-slide li {
+    margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);
+}
+
+/* Flex layouts within slides */
+.pitch-slide .slide-grid {
+    display: grid;
+    gap: clamp(0.5rem, 1.5vw, 1.5rem);
+    height: 100%;
+    overflow: hidden;
+}
+
+.pitch-slide .slide-flex {
+    display: flex;
+    gap: clamp(0.5rem, 1.5vw, 1.5rem);
+    flex-wrap: wrap;
+}
+
+/* Card/box components - responsive padding */
+.pitch-slide .card,
+.pitch-slide .box,
+.pitch-slide .section {
+    padding: clamp(0.5rem, 1.5vw, 1.5rem);
+    border-radius: clamp(4px, 0.5vw, 8px);
+}
+
+/* Cover slide specific styles */
+.pitch-cover-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #003d5c 0%, #0066a1 100%);
+}
+
+.pitch-cover-slide h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: white;
+}
+
+.pitch-cover-slide p {
+    font-size: clamp(1rem, 2vw, 1.8rem);
+    color: #a8d5e8;
+}
+
+/* Navigation within slides - compact */
+.pitch-nav,
+.pitch-nav-bottom {
+    display: flex;
+    gap: clamp(0.5rem, 1vw, 1rem);
+    margin-top: clamp(0.5rem, 1vw, 1.5rem);
+}
+
+.pitch-nav a,
+.pitch-nav-bottom a {
+    padding: clamp(0.4rem, 1vw, 0.75rem) clamp(0.8rem, 1.5vw, 1.5rem);
+    font-size: clamp(0.7rem, 1.2vw, 0.95rem);
+    white-space: nowrap;
+}
+
+/* Utility: force content to fit */
+.pitch-slide .fit-content {
+    max-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Utility: scrollable section within slide (use sparingly) */
+.pitch-slide .scrollable {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+
+.pitch-slide .scrollable::-webkit-scrollbar {
+    width: 6px;
+}
+
+.pitch-slide .scrollable::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+/* Ensure navbar is minimal on pitch pages */
+body.pitch-deck-body .navbar {
+    padding: 0.5rem 0;
+    position: relative;
+    box-shadow: none;
+}
+
+body.pitch-deck-body .navbar .logo img {
+    height: clamp(40px, 6vh, 80px);
+}
+
+body.pitch-deck-body .nav-links {
+    font-size: clamp(0.6rem, 1vw, 0.8rem);
+    gap: clamp(0.5rem, 1.5vw, 1.5rem);
+}

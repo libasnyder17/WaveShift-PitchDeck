@@ -7,50 +7,33 @@
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        header, footer {
-            display: none;
-        }
-        .pitch-page {
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            padding: 2rem 3rem;
-            box-sizing: border-box;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
-        }
         .slide-title {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             font-weight: 700;
             color: var(--primary-blue);
-            margin: 0 0 1.5rem 0;
+            margin: 0 0 clamp(0.75rem, 1.5vh, 1.25rem) 0;
             text-align: center;
         }
         .slide-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto 1fr auto;
-            gap: 1.25rem;
+            gap: clamp(0.75rem, 1.5vw, 1.25rem);
             flex: 1;
             overflow: hidden;
         }
         .card {
             background: white;
-            border-radius: 8px;
-            padding: 1.25rem;
+            border-radius: 6px;
+            padding: clamp(0.75rem, 1.5vw, 1.25rem);
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
         }
         .card h3 {
-            font-size: 1.15rem;
+            font-size: clamp(0.9rem, 1.7vw, 1.15rem);
             color: var(--primary-blue);
-            margin: 0 0 1rem 0;
+            margin: 0 0 clamp(0.5rem, 1vh, 0.85rem) 0;
             font-weight: 600;
         }
         .card-content {
@@ -66,12 +49,12 @@
         .revenue-step {
             display: flex;
             align-items: center;
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
+            margin-bottom: clamp(0.4rem, 0.8vh, 0.65rem);
+            font-size: clamp(0.75rem, 1.4vw, 0.95rem);
         }
         .revenue-step-icon {
-            width: 2.5rem;
-            height: 2.5rem;
+            width: clamp(1.8rem, 3vw, 2.5rem);
+            height: clamp(1.8rem, 3vw, 2.5rem);
             border-radius: 50%;
             background: var(--accent-blue);
             color: white;
@@ -79,12 +62,12 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            margin-right: 1rem;
+            margin-right: clamp(0.5rem, 1vw, 1rem);
             flex-shrink: 0;
         }
         .revenue-caption {
-            margin-top: 0.75rem;
-            font-size: 0.85rem;
+            margin-top: clamp(0.4rem, 0.8vh, 0.65rem);
+            font-size: clamp(0.65rem, 1.2vw, 0.85rem);
             color: #6c757d;
             font-style: italic;
         }
@@ -93,21 +76,21 @@
             grid-row: 1;
         }
         .economics-table {
-            font-size: 0.9rem;
-            line-height: 1.8;
+            font-size: clamp(0.7rem, 1.3vw, 0.9rem);
+            line-height: 1.6;
         }
         .economics-row {
             display: flex;
             justify-content: space-between;
-            padding: 0.4rem 0;
+            padding: clamp(0.25rem, 0.5vh, 0.35rem) 0;
             border-bottom: 1px solid #e9ecef;
         }
         .economics-row:last-child {
             border-bottom: none;
             font-weight: 700;
             color: var(--primary-blue);
-            margin-top: 0.5rem;
-            padding-top: 0.75rem;
+            margin-top: clamp(0.3rem, 0.6vh, 0.5rem);
+            padding-top: clamp(0.4rem, 0.8vh, 0.65rem);
             border-top: 2px solid var(--primary-blue);
         }
         .economics-label {
@@ -131,7 +114,7 @@
             justify-content: space-around;
             align-items: flex-end;
             height: 100%;
-            padding: 1rem 2rem;
+            padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 2vw, 2rem);
         }
         .cost-bar {
             flex: 1;
@@ -139,18 +122,18 @@
             text-align: center;
         }
         .cost-bar-title {
-            font-size: 1rem;
+            font-size: clamp(0.8rem, 1.5vw, 1rem);
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: clamp(0.5rem, 1vh, 0.85rem);
             color: var(--text-dark);
         }
         .cost-bar-visual {
             background: linear-gradient(180deg, #dc3545 0%, #c82333 100%);
             border-radius: 8px 8px 0 0;
             color: white;
-            padding: 1.5rem 0.75rem;
+            padding: clamp(0.75rem, 1.5vw, 1.25rem) clamp(0.4rem, 1vw, 0.75rem);
             font-weight: 700;
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 2vw, 1.25rem);
             position: relative;
         }
         .cost-bar-visual.low {
@@ -161,14 +144,14 @@
             height: 100%;
         }
         .cost-breakdown {
-            font-size: 0.8rem;
-            margin-top: 0.5rem;
+            font-size: clamp(0.6rem, 1.1vw, 0.75rem);
+            margin-top: clamp(0.3rem, 0.6vh, 0.5rem);
             color: #6c757d;
-            line-height: 1.6;
+            line-height: 1.4;
         }
         .cost-advantage {
-            margin-top: 1rem;
-            font-size: 0.85rem;
+            margin-top: clamp(0.5rem, 1vh, 0.85rem);
+            font-size: clamp(0.65rem, 1.2vw, 0.85rem);
             color: var(--primary-blue);
             font-weight: 600;
         }
@@ -177,13 +160,13 @@
             grid-row: 3;
         }
         .som-math {
-            font-size: 0.95rem;
-            line-height: 2;
+            font-size: clamp(0.75rem, 1.4vw, 0.95rem);
+            line-height: 1.8;
         }
         .som-math-row {
             display: flex;
             align-items: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: clamp(0.25rem, 0.5vh, 0.4rem);
         }
         .som-math-label {
             color: var(--text-dark);
@@ -192,12 +175,12 @@
         .som-math-value {
             font-weight: 700;
             color: var(--primary-blue);
-            margin-left: 1rem;
+            margin-left: clamp(0.5rem, 1vw, 1rem);
         }
         .som-operator {
             color: var(--accent-blue);
             font-weight: 700;
-            margin: 0.25rem 0;
+            margin: clamp(0.15rem, 0.3vh, 0.25rem) 0;
         }
         .customer-metrics {
             grid-column: 2;
@@ -206,38 +189,38 @@
         .metrics-dashboard {
             background: #f8f9fa;
             border-radius: 6px;
-            padding: 1rem;
+            padding: clamp(0.6rem, 1.2vw, 1rem);
             border: 2px solid var(--accent-blue);
         }
         .dashboard-title {
-            font-size: 0.85rem;
+            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
             font-weight: 600;
             color: var(--primary-blue);
-            margin-bottom: 0.75rem;
+            margin-bottom: clamp(0.4rem, 0.8vh, 0.65rem);
             text-align: center;
         }
         .metric-item {
             display: flex;
             align-items: center;
-            margin-bottom: 0.6rem;
-            font-size: 0.85rem;
+            margin-bottom: clamp(0.35rem, 0.7vh, 0.5rem);
+            font-size: clamp(0.65rem, 1.2vw, 0.85rem);
         }
         .metric-icon {
             width: 0.5rem;
             height: 0.5rem;
             border-radius: 50%;
             background: var(--accent-blue);
-            margin-right: 0.75rem;
+            margin-right: clamp(0.4rem, 0.8vw, 0.65rem);
         }
         .metric-label {
             color: var(--text-dark);
         }
     </style>
 </head>
-<body>
+<body class="pitch-deck-body">
     <header class="navbar">
         <div class="container">
-            <div class="logo"><img src="../assets/waveshift-logo.png" alt="WaveShift Logo" style="height: 150px; vertical-align: middle;"></div>
+            <div class="logo"><img src="../assets/waveshift-logo.png" alt="WaveShift Logo"></div>
             <nav class="nav-links">
                 <a href="../index.html">Home</a>
                 <a href="../underlying-magic-technology.html">Technology</a>
@@ -250,8 +233,8 @@
         </div>
     </header>
 
-    <main>
-        <section class="pitch-page">
+    <div class="pitch-slide">
+        <div class="pitch-slide-content" style="background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%); display: flex; flex-direction: column;">
             <h1 class="slide-title">Business Model</h1>
             
             <div class="slide-grid">
@@ -389,8 +372,8 @@
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <script src="../script.js"></script>
 </body>

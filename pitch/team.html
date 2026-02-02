@@ -7,27 +7,10 @@
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        body {
-            overflow: hidden;
-        }
-        .pitch-page {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            padding: 2rem 3rem;
-            box-sizing: border-box;
-        }
-        .pitch-hero-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
         .team-profiles {
             display: flex;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
+            gap: clamp(1rem, 2vw, 2rem);
+            margin-bottom: clamp(0.75rem, 1.5vh, 1.25rem);
             justify-content: center;
         }
         .team-profile {
@@ -39,130 +22,105 @@
             text-align: center;
         }
         .team-photo {
-            width: 180px;
-            height: 180px;
+            width: clamp(120px, 18vw, 180px);
+            height: clamp(120px, 18vw, 180px);
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1rem;
-            border: 4px solid var(--accent-blue);
+            margin-bottom: clamp(0.5rem, 1vh, 0.85rem);
+            border: 3px solid var(--accent-blue);
             box-shadow: 0 4px 12px rgba(0, 91, 187, 0.15);
         }
         .team-profile h3 {
-            font-size: 1.4rem;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
             color: var(--primary-blue);
-            margin-bottom: 0.3rem;
+            margin-bottom: clamp(0.2rem, 0.4vh, 0.3rem);
         }
         .team-profile .role {
-            font-size: 1rem;
+            font-size: clamp(0.75rem, 1.4vw, 1rem);
             color: var(--text-muted);
-            margin-bottom: 0.8rem;
+            margin-bottom: clamp(0.5rem, 1vh, 0.75rem);
         }
         .team-profile .expertise {
             text-align: left;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 0.8rem;
+            font-size: clamp(0.7rem, 1.3vw, 0.9rem);
+            line-height: 1.6;
+            margin-bottom: clamp(0.5rem, 1vh, 0.75rem);
             list-style: none;
             padding: 0;
         }
         .team-profile .expertise li {
-            margin-bottom: 0.4rem;
-            padding-left: 1.2rem;
+            margin-bottom: clamp(0.2rem, 0.5vh, 0.35rem);
+            padding-left: 1rem;
             position: relative;
         }
         .team-profile .expertise li:before {
             content: "";
             position: absolute;
             left: 0;
-            top: 0.6rem;
-            width: 6px;
-            height: 6px;
+            top: clamp(0.4rem, 0.8vh, 0.6rem);
+            width: 5px;
+            height: 5px;
             background: var(--accent-blue);
             border-radius: 50%;
         }
         .team-profile .why-matters {
-            font-size: 0.9rem;
+            font-size: clamp(0.7rem, 1.3vw, 0.85rem);
             font-style: italic;
             color: var(--accent-blue);
-            margin-bottom: 0.5rem;
+            margin-bottom: clamp(0.3rem, 0.6vh, 0.45rem);
         }
         .team-profile .email {
-            font-size: 0.75rem;
+            font-size: clamp(0.6rem, 1.1vw, 0.75rem);
             color: var(--text-muted);
         }
         .team-value {
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            padding: 1.5rem 2rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
+            padding: clamp(0.75rem, 1.5vw, 1.25rem) clamp(1rem, 2vw, 1.75rem);
+            border-radius: 6px;
+            margin-bottom: clamp(0.5rem, 1vh, 0.85rem);
             border-left: 4px solid var(--accent-blue);
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
         .team-value h3 {
-            font-size: 1.2rem;
+            font-size: clamp(0.95rem, 1.7vw, 1.2rem);
             color: var(--primary-blue);
-            margin-bottom: 0.8rem;
+            margin-bottom: clamp(0.5rem, 1vh, 0.75rem);
         }
         .team-value ul {
             list-style: none;
             padding: 0;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0.6rem;
-            font-size: 0.95rem;
+            gap: clamp(0.4rem, 0.8vw, 0.6rem);
+            font-size: clamp(0.7rem, 1.3vw, 0.9rem);
             color: var(--text-dark);
         }
         .team-value li {
-            padding-left: 1.2rem;
+            padding-left: 1rem;
             position: relative;
         }
         .team-value li:before {
             content: "";
             position: absolute;
             left: 0;
-            top: 0.6rem;
-            width: 6px;
-            height: 6px;
+            top: clamp(0.4rem, 0.8vh, 0.6rem);
+            width: 5px;
+            height: 5px;
             background: var(--accent-blue);
             border-radius: 50%;
         }
         .advisors-note {
             text-align: center;
-            font-size: 0.85rem;
+            font-size: clamp(0.65rem, 1.2vw, 0.8rem);
             color: var(--text-muted);
             font-style: italic;
         }
-        .pitch-nav-bottom {
-            text-align: center;
-            margin-top: auto;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        .pitch-nav-bottom a {
-            padding: 0.6rem 1.2rem;
-            text-decoration: none;
-            border-radius: 4px;
-            background: var(--accent-blue);
-            color: white;
-            transition: background 0.3s;
-            font-size: 0.9rem;
-        }
-        .pitch-nav-bottom a:hover {
-            background: var(--primary-blue);
-        }
-        .pitch-nav-bottom a.secondary {
-            background: #6c757d;
-        }
-        .pitch-nav-bottom a.secondary:hover {
-            background: #5a6268;
-        }
     </style>
 </head>
-<body>
+<body class="pitch-deck-body">
     <header class="navbar">
         <div class="container">
-            <div class="logo"><img src="../assets/waveshift-logo.png" alt="WaveShift Logo" style="height: 150px; vertical-align: middle;"></div>
+            <div class="logo"><img src="../assets/waveshift-logo.png" alt="WaveShift Logo"></div>
             <nav class="nav-links">
                 <a href="../index.html">Home</a>
                 <a href="../underlying-magic-technology.html">Technology</a>
@@ -175,9 +133,9 @@
         </div>
     </header>
 
-    <main>
-        <section class="pitch-page">
-            <h1 class="pitch-hero-title">Team</h1>
+    <div class="pitch-slide">
+        <div class="pitch-slide-content" style="display: flex; flex-direction: column;">
+            <h1 class="pitch-hero-title" style="text-align: center;">Team</h1>
             
             <div class="team-profiles">
                 <div class="team-profile">
@@ -219,18 +177,12 @@
             
             <p class="advisors-note">Maritime industry advisors currently in discussion to support pilot deployment</p>
             
-            <div class="pitch-nav-bottom">
-                <a href="competition.html" class="secondary">← Back</a>
-                <a href="milestones.html">Next: Milestones →</a>
+            <div class="pitch-nav-bottom" style="justify-content: center; margin-top: auto;">
+                <a href="competition.html" class="secondary" style="background: #6c757d; color: white; text-decoration: none; border-radius: 4px; transition: background 0.3s;">← Back</a>
+                <a href="milestones.html" style="background: var(--accent-blue); color: white; text-decoration: none; border-radius: 4px; transition: background 0.3s;">Next: Milestones →</a>
             </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 WaveShift. Autonomous Maritime Systems | Early-Stage Venture</p>
         </div>
-    </footer>
+    </div>
 
     <script src="../script.js"></script>
 </body>

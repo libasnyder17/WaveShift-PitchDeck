@@ -7,57 +7,63 @@
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .pitch-cover {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #003d5c 0%, #0066a1 100%);
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-        .pitch-cover-content {
-            max-width: 900px;
-        }
         .pitch-logo {
-            height: 200px;
-            margin-bottom: 2rem;
+            height: clamp(100px, 15vh, 180px);
+            margin-bottom: clamp(0.5rem, 2vh, 1.5rem);
         }
-        .pitch-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1.5rem;
+        .judging-prompts {
+            background: rgba(255,255,255,0.1);
+            padding: clamp(0.75rem, 2vh, 1.5rem);
+            border-radius: 6px;
+            margin: 0 auto clamp(1rem, 3vh, 2rem);
+            max-width: 600px;
         }
-        .pitch-tagline {
-            font-size: 1.5rem;
+        .judging-prompts h3 {
+            font-size: clamp(0.75rem, 1.2vw, 0.95rem);
             color: #a8d5e8;
-            margin-bottom: 3rem;
-            line-height: 1.6;
+            margin-bottom: clamp(0.5rem, 1vh, 0.75rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .pitch-nav {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 3rem;
+        .judging-prompts ul {
+            list-style: none;
+            padding: 0;
+            font-size: clamp(0.7rem, 1.1vw, 0.85rem);
+            color: #a8d5e8;
+            line-height: 1.5;
         }
-        .pitch-nav a {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background 0.3s;
+        .judging-prompts li {
+            margin-bottom: clamp(0.25rem, 0.5vh, 0.4rem);
         }
-        .pitch-nav a:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .team-info {
+            margin: clamp(1rem, 2vh, 1.5rem) auto;
+            font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+            color: #a8d5e8;
+        }
+        .team-info p {
+            margin: clamp(0.25rem, 0.5vh, 0.4rem) 0;
+        }
+        .hero-image-container {
+            max-width: 650px;
+            margin: clamp(1rem, 3vh, 2rem) auto;
+        }
+        .hero-image-container img {
+            width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .hero-image-container p {
+            margin-top: clamp(0.5rem, 1vh, 0.75rem);
+            font-size: clamp(0.65rem, 1vw, 0.85rem);
+            color: #a8d5e8;
+            font-style: italic;
         }
     </style>
 </head>
-<body>
+<body class="pitch-deck-body">
     <header class="navbar">
         <div class="container">
-            <div class="logo"><img src="../assets/waveshift-logo.png" alt="WaveShift Logo" style="height: 150px; vertical-align: middle;"></div>
+            <div class="logo"><img src="../assets/waveshift-logo.png" alt="WaveShift Logo"></div>
             <nav class="nav-links">
                 <a href="../index.html">Home</a>
                 <a href="../underlying-magic-technology.html">Technology</a>
@@ -70,46 +76,37 @@
         </div>
     </header>
 
-    <main>
-        <section class="pitch-cover">
-            <div class="pitch-cover-content">
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; margin: 0 auto 3rem; max-width: 700px;">
-                    <h3 style="font-size: 1rem; color: #a8d5e8; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">Judging Prompts</h3>
-                    <ul style="list-style: none; padding: 0; font-size: 0.9rem; color: #a8d5e8; line-height: 1.6;">
-                        <li style="margin-bottom: 0.5rem;">• Company Name</li>
-                        <li style="margin-bottom: 0.5rem;">• Tag Line (if you have one)</li>
-                        <li style="margin-bottom: 0.5rem;">• Team Name</li>
-                        <li style="margin-bottom: 0.5rem;">• Date of Presentation</li>
-                    </ul>
-                </div>
-                
-                <img src="../assets/waveshift-logo.png" alt="WaveShift Logo" class="pitch-logo">
-                <h1 class="pitch-title">WaveShift</h1>
-                <p class="pitch-tagline">Monitoring-first autonomy for ports</p>
-                
-                <div style="margin: 2rem auto; font-size: 1rem; color: #a8d5e8;">
-                    <p style="margin: 0.5rem 0;">Team Name: WaveShift</p>
-                    <p style="margin: 0.5rem 0;">Date of Presentation: February 11</p>
-                </div>
-                
-                <div style="max-width: 700px; margin: 3rem auto;">
-                    <img src="../assets/hero.png" alt="Autonomous surface vessel concept" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #a8d5e8; font-style: italic;">Autonomous surface monitoring concept (industry reference; not WaveShift hardware)</p>
-                </div>
-                
-                <div class="pitch-nav">
-                    <a href="problem-market.html">Start Presentation →</a>
-                </div>
+    <div class="pitch-slide pitch-cover-slide">
+        <div class="pitch-slide-content">
+            <div class="judging-prompts">
+                <h3>Judging Prompts</h3>
+                <ul>
+                    <li>• Company Name</li>
+                    <li>• Tag Line (if you have one)</li>
+                    <li>• Team Name</li>
+                    <li>• Date of Presentation</li>
+                </ul>
             </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 WaveShift. Autonomous Maritime Systems | Early-Stage Venture</p>
-            <!-- <a href="pitch/cover.html">Pitch Deck</a> -->
+            
+            <img src="../assets/waveshift-logo.png" alt="WaveShift Logo" class="pitch-logo">
+            <h1>WaveShift</h1>
+            <p style="font-size: clamp(1rem, 2vw, 1.6rem); color: #a8d5e8; margin-bottom: clamp(1rem, 2vh, 2rem); line-height: 1.5;">Monitoring-first autonomy for ports</p>
+            
+            <div class="team-info">
+                <p>Team Name: WaveShift</p>
+                <p>Date of Presentation: February 11</p>
+            </div>
+            
+            <div class="hero-image-container">
+                <img src="../assets/hero.png" alt="Autonomous surface vessel concept">
+                <p>Autonomous surface monitoring concept (industry reference; not WaveShift hardware)</p>
+            </div>
+            
+            <div class="pitch-nav" style="justify-content: center; margin-top: clamp(1rem, 2vh, 1.5rem);">
+                <a href="problem-market.html" style="background: rgba(255, 255, 255, 0.1); color: white; text-decoration: none; border-radius: 4px; transition: background 0.3s;">Start Presentation →</a>
+            </div>
         </div>
-    </footer>
+    </div>
 
     <script src="../script.js"></script>
 </body>
