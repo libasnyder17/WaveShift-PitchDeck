@@ -1,0 +1,23 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Eagle Hawk Logo -->
+  <defs>
+    <style>
+      .eaglehawk-text { font-family: Arial, sans-serif; font-weight: bold; font-size: 16px; fill: #0066a1; }
+      .eagle-body { fill: #0066a1; }
+    </style>
+  </defs>
+  
+  <!-- Eagle silhouette -->
+  <path class="eagle-body" d="M 100 30 C 85 40 75 55 75 70 L 75 85 C 75 95 85 100 100 105 C 115 100 125 95 125 85 L 125 70 C 125 55 115 40 100 30 Z"/>
+  
+  <!-- Wings -->
+  <path class="eagle-body" d="M 100 65 L 60 85 L 70 75 Z"/>
+  <path class="eagle-body" d="M 100 65 L 140 85 L 130 75 Z"/>
+  
+  <!-- Head/neck extension -->
+  <circle class="eagle-body" cx="100" cy="50" r="8"/>
+  
+  <!-- Text -->
+  <text x="100" y="130" text-anchor="middle" class="eaglehawk-text">EAGLE</text>
+  <text x="100" y="150" text-anchor="middle" class="eaglehawk-text">HAWK</text>
+</svg>

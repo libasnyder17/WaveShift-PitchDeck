@@ -824,6 +824,167 @@ body {
     margin: 0 auto;
 }
 
+/* New Team Members Layout */
+.team-members-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.team-member-card {
+    display: grid;
+    grid-template-columns: 200px 1fr 150px;
+    gap: 2.5rem;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(168, 213, 232, 0.3) 0%, rgba(230, 242, 247, 0.3) 100%);
+    border: 2px solid var(--light-blue);
+    padding: 2.5rem;
+    border-radius: 4px;
+}
+
+.team-member-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-member-photo img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(0, 61, 92, 0.15);
+}
+
+.team-member-info {
+    text-align: left;
+}
+
+.team-member-name {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.team-member-role {
+    background: var(--primary-dark);
+    color: white;
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    font-weight: var(--font-weight-bold);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.team-member-title {
+    color: var(--accent-blue);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.team-member-desc {
+    color: var(--text-light);
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+
+.team-member-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    transition: all 0.3s ease;
+}
+
+.team-member-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.team-member-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-member-logo img {
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.team-member-card:hover .team-member-logo img {
+    opacity: 1;
+}
+
+/* Partner Logos Section */
+.partner-logos-section {
+    text-align: center;
+    padding: 3rem 0;
+    border-top: 2px solid var(--border-light);
+    margin-bottom: 3rem;
+}
+
+.partner-logos-section h3 {
+    color: var(--primary-dark);
+    font-size: 1.3rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.partner-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 1rem;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    min-width: 150px;
+    height: 120px;
+}
+
+.partner-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .team-member-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .team-member-info {
+        text-align: center;
+    }
+    
+    .team-member-photo,
+    .team-member-logo {
+        order: -1;
+    }
+}
+
 /* ===========================
    CONTACT SECTION
    =========================== */

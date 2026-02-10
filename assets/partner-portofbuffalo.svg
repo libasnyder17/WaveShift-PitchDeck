@@ -1,0 +1,29 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Port of Buffalo Logo -->
+  <defs>
+    <style>
+      .port-text { font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; fill: #003d5c; }
+      .port-ship { fill: #ff6b35; stroke: #003d5c; stroke-width: 2; }
+      .port-waves { fill: none; stroke: #0066a1; stroke-width: 2; }
+    </style>
+  </defs>
+  
+  <!-- Container ship -->
+  <rect class="port-ship" x="60" y="60" width="80" height="40" rx="4"/>
+  
+  <!-- Ship cabin -->
+  <rect class="port-ship" x="75" y="45" width="30" height="20" rx="2"/>
+  
+  <!-- Cargo containers (stacked boxes) -->
+  <rect class="port-ship" x="65" y="70" width="12" height="12" opacity="0.8"/>
+  <rect class="port-ship" x="80" y="70" width="12" height="12" opacity="0.8"/>
+  <rect class="port-ship" x="95" y="70" width="12" height="12" opacity="0.8"/>
+  <rect class="port-ship" x="110" y="70" width="12" height="12" opacity="0.8"/>
+  
+  <!-- Water waves -->
+  <path class="port-waves" d="M 40 110 Q 50 105 60 110 T 80 110 T 100 110 T 120 110 T 140 110"/>
+  <path class="port-waves" d="M 40 125 Q 50 120 60 125 T 80 125 T 100 125 T 120 125 T 140 125"/>
+  
+  <!-- Text -->
+  <text x="100" y="155" text-anchor="middle" class="port-text">PORT OF BUFFALO</text>
+</svg>
