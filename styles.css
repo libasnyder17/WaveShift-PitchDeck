@@ -113,6 +113,82 @@ body {
     color: var(--primary-dark);
 }
 
+/* Hamburger Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 0.4rem;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2.5px;
+    background-color: var(--primary-dark);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Collapsible Nav Links */
+.nav-links {
+    transition: all 0.3s ease;
+}
+
+.nav-links.collapsed {
+    display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: linear-gradient(135deg, var(--light-blue) 0%, var(--very-light-blue) 100%);
+        padding: 1rem 0;
+        box-shadow: 0 4px 12px rgba(0, 61, 92, 0.12);
+        display: flex;
+    }
+    
+    .nav-links.collapsed {
+        display: none !important;
+    }
+    
+    .nav-links a {
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid rgba(0, 61, 92, 0.1);
+        font-size: 0.9rem;
+    }
+    
+    .navbar .container {
+        flex-wrap: wrap;
+        gap: 0;
+        position: relative;
+    }
+}
+
 /* ===========================
    HERO SECTION
    =========================== */

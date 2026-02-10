@@ -1,5 +1,24 @@
 // Navigation active link handling
 document.addEventListener('DOMContentLoaded', function() {
+    // Menu toggle functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('collapsed');
+        });
+        
+        // Close menu when a link is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                navMenu.classList.add('collapsed');
+            });
+        });
+    }
+    
     const navLinks = document.querySelectorAll('.nav-links a');
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     
