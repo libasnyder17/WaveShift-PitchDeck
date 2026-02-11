@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close menu when a link is clicked
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
-                menuToggle.classList.remove('active');
-                navMenu.classList.add('collapsed');
+                menuToggle.classList.toggle('active');
+                navMenu.classList.toggle('collapsed');
             });
         });
     }
